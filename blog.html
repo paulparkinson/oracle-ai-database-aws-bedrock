@@ -61,7 +61,7 @@
 <section id="key-takeaways"><h2>Key Takeaways</h2><ul><li>Keep documents, vectors, and operational data in Oracle; use Bedrock for embeddings and grounded answers.</li><li>Application-managed RAG and database-managed Select AI are two distinct integration paths.</li><li>AWS account access, Bedrock inference permission, and Oracle database access require separate configuration.</li><li>Carry authorization into retrieval and require explicit approval before an agent changes business data.</li></ul></section>
 
 <p class="lead">Oracle AI Database and Amazon Bedrock can work together without moving the system of record into a second vector database. An application embeds a question, retrieves relevant and authorized evidence from Oracle, and sends that evidence to a Bedrock model to produce an answer with citations.</p>
-<p>This article adapts the <a href="../oracle-ai-database-gcp-gemini/blog.html">Gemini Enterprise supply-chain example</a>: relational queries identify inventory risk, graph queries explain dependencies, spatial queries locate alternatives, and document retrieval supplies the procedures behind a recommendation. The AWS version below is an implementation blueprint with illustrative code. It does not claim a completed Bedrock deployment or a port of the Gemini managed-agent integration.</p>
+<p>This article adapts the <a href="https://paulparkinson.github.io/oracle-ai-database-gcp-gemini/blog.html">Gemini Enterprise supply-chain example</a>: relational queries identify inventory risk, graph queries explain dependencies, spatial queries locate alternatives, and document retrieval supplies the procedures behind a recommendation. The AWS version below is an implementation blueprint with illustrative code. It does not claim a completed Bedrock deployment or a port of the Gemini managed-agent integration.</p>
 <aside class="note"><strong>Validation status:</strong> the development database was observed as Available on Oracle Database@AWS, running 26ai with the Lakehouse workload, 2 ECPUs, 1,024 GB storage, compute autoscaling, and required mTLS. The current AWS role lacked model and inference-profile listing permissions. SQL connectivity and model invocation were not tested. </aside>
 
 <h2>Choose Where the AI Workflow Runs</h2>
@@ -202,8 +202,8 @@ SELECT DBMS_CLOUD_AI.GENERATE(
 <li><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">AWS: Converse API</a></li>
 <li><a href="https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/vector_distance.html">Oracle: VECTOR_DISTANCE</a></li>
 <li><a href="https://paulparkinson.github.io/developer/multicloud-gcpagenticai-oracledb/workshops/tenancy/index.html">Gemini Enterprise and Oracle AI Database workshop</a></li>
-<li><a href="../security/config_providers.html">Companion: configuration providers</a></li>
-<li><a href="../security/blog_e2e_security.html">Companion: end-to-end passwordless security</a></li></ul></section>
+<li><a href="https://paulparkinson.github.io/oracle-ai-for-sustainable-dev/security/config_providers.html">Companion: configuration providers</a></li>
+<li><a href="https://paulparkinson.github.io/oracle-ai-for-sustainable-dev/security/blog_e2e_security.html">Companion: end-to-end passwordless security</a></li></ul></section>
 <section id="faq"><h2>Frequently Asked Questions</h2><h3>Do I need Bedrock Knowledge Bases to use Oracle for RAG?</h3><p>No. An application can query Oracle vectors and call Bedrock directly. Check AWS’s supported stores before choosing a managed Knowledge Base.</p>
 <h3>Is this the same as Select AI?</h3><p>No. Select AI is a database-managed AI integration. The first example implements retrieval and Bedrock calls in application code.</p>
 <h3>Does access to Oracle Database@AWS grant Bedrock permissions?</h3><p>No. AWS model access and Oracle database authentication are separate from permission to view or manage the database resource.</p>

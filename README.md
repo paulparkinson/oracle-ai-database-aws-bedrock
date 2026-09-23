@@ -1,5 +1,7 @@
 # Oracle + Bedrock RAG smoke test
 
+Standalone repository: [paulparkinson/oracle-ai-database-aws-bedrock](https://github.com/paulparkinson/oracle-ai-database-aws-bedrock). See [migration notes](MIGRATION.md) and [included skills](AGENTS.md).
+
 This small integration test calls real services with three synthetic documents:
 
 1. Amazon Titan Text Embeddings V2 embeds each document and the question.
@@ -21,31 +23,29 @@ covering the full orchestration, wrong-account/database rejection, bad retrieval
 and invalid embeddings/answers. These checks do not validate Oracle SQL execution
 or real model output.
 
-Direct AWS CloudShell calls using the renewed console session in account
-`054037143469`, region `us-east-1`, returned `AccessDeniedException` for both:
+Direct AWS CloudShell calls in account `054037143469`, region `us-east-1`,
+**succeeded after selecting the assigned `Multicloud-Engineering-Bedrock` role**:
 
 - `InvokeModel` on `amazon.titan-embed-text-v2:0`.
 - `Converse` on `amazon.nova-lite-v1:0` (requires `bedrock:InvokeModel`).
 
-Both errors said no identity-based policy allows `bedrock:InvokeModel` for
-`AWSReservedSSO_Field-Engineering-Standard_7d5eeaaa25bfd1d3`.
-The full RAG test has **not passed against live services**. The database wallet and
-local database credentials are now configured; the encrypted PEM key still needs
-its wallet password. This machine also needs an authenticated AWS SDK session.
+The earlier `AccessDeniedException` errors came from the different
+`Field-Engineering-Standard` role. Inspection of its eight managed policies and
+one inline policy found no Bedrock invocation grant. Renewing the AWS access portal
+revealed the assigned `Multicloud-Engineering-Bedrock` permission set. Selecting it
+resolved both model invocation failures without changing IAM permissions.
+The Oracle connection and the exact retrieval SQL have now **passed against live
+paulparkdbaws**, using synthetic 1,024-dimensional vectors. The expected document
+ranked first with cosine distance 0.0; no database data was changed. The driver
+reported database version `23.26.3.3.0`. Wallet and database credentials are configured.
+
+The full RAG test has **not passed against live services**. Its local execution
+stops with `NoCredentialsError`: this machine needs an authenticated AWS SDK session.
 The browser session alone does not supply credentials to local Python.
 
-Suggested admin request (not sent):
-
-> Please update and reprovision the Field-Engineering-Standard IAM Identity Center
-> permission set for account 054037143469 (ODBZ Demo - 12). My renewed session as
-> paul.parkinson@oracle.com still receives AccessDeniedException for
-> bedrock:InvokeModel on amazon.titan-embed-text-v2:0 and amazon.nova-lite-v1:0 in
-> us-east-1. Please allow invocation of these models for the Oracle RAG smoke test,
-> or provide the approved execution role and model/inference-profile IDs. The
-> attached bedrock-invoke-policy.json specifies the two direct model resources.
-
-The [proposed policy](bedrock-invoke-policy.json) is narrowly scoped to direct
-invocation of the default models. It does not change IAM automatically. An approved
+No admin change is currently needed for these two models: use the assigned Bedrock
+role. The [example policy](bedrock-invoke-policy.json) documents the narrow direct
+invocation permissions for the default models; it was not applied. An approved
 inference profile needs corresponding profile and destination-model permissions;
 provider onboarding and organization policies may impose additional requirements.
 
@@ -93,7 +93,10 @@ aws sso login --profile oracle-bedrock
 export AWS_PROFILE=oracle-bedrock
 ```
 
-Select the account and permission set authorized for this database's Bedrock use.
+Use access portal `https://d-9067d4cd70.awsapps.com/start/`, account `054037143469`,
+and permission set **Multicloud-Engineering-Bedrock** (not Field-Engineering-Standard).
+Select workload region `us-east-1`. The SSO directory region is a separate setting;
+use the organization's configured value when setting up the CLI.
 The role must allow `bedrock:InvokeModel` for the embedding and generation models.
 Converse uses that same inference permission. This script does not need model-list,
 Knowledge Base creation, or streaming permissions. AWS STS is used to identify the
