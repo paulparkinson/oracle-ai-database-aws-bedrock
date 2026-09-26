@@ -1,0 +1,21 @@
+.gradle/
+build/
+bin/
+wallet/
+data/generated/
+__pycache__/
+*.zip
+.DS_Store
+
+# Dependencies are resolved from Oracle Artifactory; do not add local jar copies.
+libs/*.jar
+
+# Do not commit OCI wallet material if a wallet is copied into this project.
+*.p12
+*.pem
+*.jks
+cwallet.sso
+ewallet.*
+tnsnames.ora
+sqlnet.ora
+ojdbc.properties

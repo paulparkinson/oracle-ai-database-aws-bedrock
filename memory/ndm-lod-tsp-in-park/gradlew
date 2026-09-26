@@ -1,0 +1,27 @@
+#!/bin/sh
+
+APP_HOME=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+
+if [ -n "$JAVA_HOME" ]; then
+    JAVACMD=$JAVA_HOME/bin/java
+else
+    JAVACMD=java
+fi
+
+if [ -n "$JAVA_HOME" ] && [ ! -x "$JAVACMD" ]; then
+    echo "ERROR: Java executable not found: $JAVACMD" >&2
+    exit 1
+fi
+
+if [ -z "$JAVA_HOME" ] && ! command -v "$JAVACMD" >/dev/null 2>&1; then
+    echo "ERROR: Java executable not found on PATH: $JAVACMD" >&2
+    exit 1
+fi
+
+export GRADLE_USER_HOME=${GRADLE_USER_HOME:-"$APP_HOME/.gradle"}
+
+exec "$JAVACMD" \
+    -Dorg.gradle.appname=gradlew \
+    -classpath "$CLASSPATH" \
+    org.gradle.wrapper.GradleWrapperMain "$@"

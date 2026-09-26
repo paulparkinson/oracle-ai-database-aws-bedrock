@@ -152,3 +152,17 @@ python rag_smoke_test.py --env-file /secure/path/bedrock-rag.env
 References: [Titan embedding parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-titan-embed-text.html),
 [Converse](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html),
 [Oracle vector binding](https://python-oracledb.readthedocs.io/en/stable/user_guide/vector_data_type.html).
+
+## Migrated Oracle AI Agent Memory demo
+
+The complete memory application is under [`memory/`](memory/). Use
+[`memory/README.md`](memory/README.md) for the local Python and Java lanes,
+database inspector, Deep Data Security proof, Memory Quest, and walkthrough
+source. For AWS container deployment and the separate Bedrock verification
+path, see [`memory/aws/README.md`](memory/aws/README.md) and the reusable
+[`oracle-memory-aws-bedrock` skill](skills/oracle-memory-aws-bedrock/SKILL.md).
+
+The memory browser and Bedrock RAG smoke test are intentionally separate
+verification lanes: the browser demonstrates Oracle Agent Memory and
+database-resident retrieval, while `rag_smoke_test.py` verifies Titan
+embeddings, Oracle vector retrieval, and Nova Lite grounded generation.

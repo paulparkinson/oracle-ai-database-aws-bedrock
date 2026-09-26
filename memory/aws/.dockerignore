@@ -1,0 +1,11 @@
+.env
+.venv
+**/.venv
+**/__pycache__
+**/*.pyc
+**/target
+**/.build
+**/*.mp4
+**/*.gif
+**/*.pem
+**/wallet*

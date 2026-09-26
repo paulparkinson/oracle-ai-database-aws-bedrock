@@ -1,0 +1,303 @@
+import java.net.HttpURLConnection
+import java.net.URL
+import java.nio.file.AtomicMoveNotSupportedException
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
+
+plugins {
+    id 'application'
+}
+
+group = 'local.ndm'
+version = '1.0.0'
+
+def javaToolchainVersion = (findProperty('javaVersion') ?: '11') as Integer
+def oracleJdbcVersion = findProperty('oracleJdbcVersion') ?: '26.1.0.24.0.260902'
+def oracleSpatialVersion = findProperty('oracleSpatialVersion') ?: '251003_main'
+def oracleNdmVersion = findProperty('oracleNdmVersion') ?: '23.1.0_20230601'
+def libsDir = file('libs')
+
+def firstNonBlank = { List<String> keys ->
+    for (String key : keys) {
+        def value = findProperty(key)
+        if (value != null && value.toString().trim()) {
+            return value.toString().trim()
+        }
+    }
+    return null
+}
+
+def artifactoryToken = firstNonBlank([
+    'artifactoryToken',
+    'phx_artifactory_reader_token',
+    'artifactory_token'
+]) ?: [
+    System.getenv('ARTIFACTORY_TOKEN'),
+    System.getenv('PHX_ARTIFACTORY_READER_TOKEN')
+].find { it != null && it.trim() }?.trim()
+
+def jdbcArtifactoryUrl = (findProperty('jdbcArtifactoryUrl')
+    ?: 'https://artifacthub-phx.oci.oraclecorp.com/jdbc-dev-local')
+    .toString().replaceAll('/+$', '')
+def spatialArtifactoryUrl = (findProperty('spatialArtifactoryUrl')
+    ?: 'https://artifacthub-phx.oci.oraclecorp.com/dbspatial-dev-local')
+    .toString().replaceAll('/+$', '')
+
+def oracleJarSpecs = [
+    [
+        fileName: 'ojdbc11.jar',
+        url: "${jdbcArtifactoryUrl}/com/oracle/database/jdbc/ojdbc11/${oracleJdbcVersion}/ojdbc11-${oracleJdbcVersion}.jar"
+    ],
+    [
+        fileName: 'oraclepki.jar',
+        url: "${jdbcArtifactoryUrl}/com/oracle/database/security/oraclepki/${oracleJdbcVersion}/oraclepki-${oracleJdbcVersion}.jar"
+    ],
+    [
+        fileName: 'sdoapi.jar',
+        url: "${spatialArtifactoryUrl}/com/oracle/spatial/sdoapi/${oracleSpatialVersion}/sdoapi-${oracleSpatialVersion}.jar"
+    ],
+    [
+        fileName: 'sdonm.jar',
+        url: "${spatialArtifactoryUrl}/com/oracle/spatial/sdonm/${oracleNdmVersion}/sdonm-${oracleNdmVersion}.jar"
+    ],
+    [
+        fileName: 'sdoutl.jar',
+        url: "${spatialArtifactoryUrl}/com/oracle/spatial/sdoutl/${oracleSpatialVersion}/sdoutl-${oracleSpatialVersion}.jar"
+    ]
+]
+def localOracleJarFiles = oracleJarSpecs.collect { spec -> file("${libsDir}/${spec.fileName}") }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(javaToolchainVersion)
+    }
+}
+
+dependencies {
+    implementation files(localOracleJarFiles)
+}
+
+application {
+    mainClass = 'lod.ShortestPathAnalysis'
+}
+
+tasks.register('downloadOracleJars') {
+    group = 'dependencies'
+    description = 'Download the Oracle JDBC, Spatial, and NDM jars into the ignored libs/ directory.'
+    inputs.property('oracleJdbcVersion', oracleJdbcVersion)
+    inputs.property('oracleSpatialVersion', oracleSpatialVersion)
+    inputs.property('oracleNdmVersion', oracleNdmVersion)
+    inputs.property('jdbcArtifactoryUrl', jdbcArtifactoryUrl)
+    inputs.property('spatialArtifactoryUrl', spatialArtifactoryUrl)
+    outputs.files(localOracleJarFiles)
+
+    doLast {
+        if (!artifactoryToken) {
+            logger.lifecycle('No Artifactory token supplied; attempting anonymous jar downloads.')
+        }
+
+        libsDir.mkdirs()
+        oracleJarSpecs.each { spec ->
+            def destination = file("${libsDir}/${spec.fileName}")
+            def temporary = file("${libsDir}/.${spec.fileName}.download")
+            delete temporary
+
+            logger.lifecycle("Downloading ${spec.fileName} from ${spec.url}")
+            HttpURLConnection connection = null
+            try {
+                connection = (HttpURLConnection) new URL(spec.url).openConnection()
+                connection.setConnectTimeout(30000)
+                connection.setReadTimeout(300000)
+                if (artifactoryToken) {
+                    connection.setRequestProperty('Authorization', "Bearer ${artifactoryToken}")
+                }
+
+                def responseCode = connection.responseCode
+                if (responseCode != HttpURLConnection.HTTP_OK) {
+                    throw new GradleException(
+                        "Failed to download ${spec.fileName}: HTTP ${responseCode} from ${spec.url}. "
+                            + (artifactoryToken
+                                ? ''
+                                : 'If anonymous access is unavailable in this environment, set an Artifactory read token.')
+                    )
+                }
+
+                temporary.withOutputStream { output ->
+                    connection.inputStream.withCloseable { input ->
+                        input.transferTo(output)
+                    }
+                }
+                if (!temporary.isFile() || temporary.length() == 0) {
+                    throw new GradleException("Downloaded an empty file for ${spec.fileName}")
+                }
+
+                try {
+                    Files.move(
+                        temporary.toPath(),
+                        destination.toPath(),
+                        StandardCopyOption.ATOMIC_MOVE,
+                        StandardCopyOption.REPLACE_EXISTING
+                    )
+                } catch (AtomicMoveNotSupportedException ignored) {
+                    Files.move(
+                        temporary.toPath(),
+                        destination.toPath(),
+                        StandardCopyOption.REPLACE_EXISTING
+                    )
+                }
+            } finally {
+                connection?.disconnect()
+                delete temporary
+            }
+        }
+    }
+}
+
+tasks.named('compileJava') {
+    dependsOn 'downloadOracleJars'
+}
+
+// The wallet is kept in a wallet subdirectory of this project. The zip path is
+// configurable and is expanded here by prepareWallet.
+def walletDir = file(findProperty('walletDir') ?: 'wallet')
+def walletZip = file(findProperty('walletZip') ?: 'wallet/Wallet_MBRJR0NIFB76C6LR.zip')
+def requiredWalletFiles = ['tnsnames.ora', 'sqlnet.ora', 'cwallet.sso']
+def walletIsReady = {
+    requiredWalletFiles.every { fileName -> new File(walletDir, fileName).isFile() }
+}
+
+tasks.withType(JavaExec).configureEach {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(javaToolchainVersion)
+    }
+
+    doFirst {
+        def metadata = javaLauncher.get().metadata
+        println "Java launcher: ${metadata.installationPath}"
+        println "Java version: ${metadata.languageVersion}"
+    }
+}
+
+tasks.register('prepareWallet', Copy) {
+    group = 'application'
+    description = 'Expand the OCI wallet zip when the project wallet is not already prepared.'
+
+    onlyIf {
+        if (walletIsReady()) {
+            logger.lifecycle("Wallet already prepared in ${walletDir.absolutePath}; skipping zip extraction.")
+            return false
+        }
+        true
+    }
+
+    doFirst {
+        if (!walletZip.exists()) {
+            throw new GradleException(
+                "Wallet directory is not ready and wallet zip was not found: ${walletZip.absolutePath}. "
+                    + "Use -PwalletZip=/path/to/Wallet.zip or place the wallet files in ${walletDir.absolutePath}."
+            )
+        }
+    }
+
+    from { zipTree(walletZip) }
+    into walletDir
+}
+
+def configureDatabaseArgs = { JavaExec task ->
+    def password = findProperty('dbPassword') ?: System.getenv('DB_PASSWORD') ?: System.getenv('ORACLE_PASSWORD')
+    def dbUser = findProperty('dbUser') ?: 'ADVENTURE_KINGDOM'
+    def service = findProperty('dbService') ?: 'mbrjr0nifb76c6lr_low'
+    def tnsAdmin = findProperty('tnsAdmin') ?: walletDir.absolutePath
+    def dbUrl = findProperty('dbUrl') ?: "jdbc:oracle:thin:@${service}?TNS_ADMIN=${tnsAdmin}"
+    def networkName = findProperty('networkName') ?: 'THEME_PARK_NET'
+    def startNodeId = findProperty('startNodeId') ?: '1'
+    def endNodeId = findProperty('endNodeId') ?: '3'
+    def routeConstraint = findProperty('routeConstraint') ?: 'NONE'
+    def logLevel = findProperty('logLevel') ?: 'ERROR'
+
+    task.args '-dbUrl', dbUrl,
+              '-dbUser', dbUser,
+              '-networkName', networkName,
+              '-startNodeId', startNodeId.toString(),
+              '-endNodeId', endNodeId.toString(),
+              '-routeConstraint', routeConstraint.toString(),
+              '-configXmlFile', 'lod/LODConfigs.xml',
+              '-logLevel', logLevel
+
+    if (password) {
+        task.args '-dbPassword', password
+    }
+}
+
+def configureTspArgs = { JavaExec task ->
+    def password = findProperty('dbPassword') ?: System.getenv('DB_PASSWORD') ?: System.getenv('ORACLE_PASSWORD')
+    def dbUser = findProperty('dbUser') ?: 'ADVENTURE_KINGDOM'
+    def service = findProperty('dbService') ?: 'mbrjr0nifb76c6lr_low'
+    def tnsAdmin = findProperty('tnsAdmin') ?: walletDir.absolutePath
+    def dbUrl = findProperty('dbUrl') ?: "jdbc:oracle:thin:@${service}?TNS_ADMIN=${tnsAdmin}"
+    def networkName = findProperty('networkName') ?: 'THEME_PARK_NET'
+    def stopNodeIds = findProperty('stopNodeIds') ?: '1,3,7,8,19'
+    def tourFlag = findProperty('tourFlag') ?: 'CLOSED'
+    def routeConstraint = findProperty('routeConstraint') ?: 'NONE'
+    def logLevel = findProperty('logLevel') ?: 'ERROR'
+
+    task.args '-dbUrl', dbUrl,
+              '-dbUser', dbUser,
+              '-networkName', networkName,
+              '-stopNodeIds', stopNodeIds.toString(),
+              '-tourFlag', tourFlag.toString(),
+              '-routeConstraint', routeConstraint.toString(),
+              '-configXmlFile', 'lod/LODConfigs.xml',
+              '-logLevel', logLevel
+
+    if (password) {
+        task.args '-dbPassword', password
+    }
+}
+
+tasks.register('runShortestPath', JavaExec) {
+    group = 'application'
+    description = 'Run Oracle NDM LOD Dijkstra shortest path and print path geometry as GeoJSON.'
+    dependsOn 'classes', 'prepareWallet'
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = application.mainClass
+    jvmArgs '-Xmx1G'
+    configureDatabaseArgs(delegate)
+}
+
+tasks.register('runTsp', JavaExec) {
+    group = 'application'
+    description = 'Run Oracle NDM LOD TSP over the configured park nodes and print each leg as GeoJSON.'
+    dependsOn 'classes', 'prepareWallet'
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'lod.TspAnalysis'
+    jvmArgs '-Xmx1G'
+    configureTspArgs(delegate)
+}
+
+tasks.register('checkDbConnection', JavaExec) {
+    group = 'application'
+    description = 'Connect using the OCI wallet and print THEME_PARK_NET metadata.'
+    dependsOn 'classes', 'prepareWallet'
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'lod.DbConnectionCheck'
+    jvmArgs '-Xmx512M'
+
+    def password = findProperty('dbPassword') ?: System.getenv('DB_PASSWORD') ?: System.getenv('ORACLE_PASSWORD')
+    def dbUser = findProperty('dbUser') ?: 'ADVENTURE_KINGDOM'
+    def service = findProperty('dbService') ?: 'mbrjr0nifb76c6lr_low'
+    def tnsAdmin = findProperty('tnsAdmin') ?: walletDir.absolutePath
+    def dbUrl = findProperty('dbUrl') ?: "jdbc:oracle:thin:@${service}?TNS_ADMIN=${tnsAdmin}"
+    def networkName = findProperty('networkName') ?: 'THEME_PARK_NET'
+
+    args '-dbUrl', dbUrl,
+         '-dbUser', dbUser,
+         '-networkName', networkName
+
+    if (password) {
+        args '-dbPassword', password
+    }
+}

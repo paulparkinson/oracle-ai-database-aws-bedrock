@@ -1,0 +1,5362 @@
+{
+  "type": "FeatureCollection",
+  "name": "Fictitious Adventure Kingdom Walkway Network",
+  "center": [
+    -116.801174,
+    37.77794
+  ],
+  "bbox": [
+    -116.806174,
+    37.77394,
+    -116.796174,
+    37.78194
+  ],
+  "attraction_count": 30,
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node-entrance",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "entrance",
+        "name": "Main Entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802301,
+          37.774961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-plaza",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Founders Plaza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.800892,
+          37.775983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-castle",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "landmark",
+        "name": "Skyfire Castle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799132,
+          37.777174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-east-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "East Garden Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.797582,
+          37.778025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-north-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "North Ridge Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.798428,
+          37.780068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-west-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "West Woods Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801949,
+          37.779557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-pirate-coaster",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Pirate Comet Coaster"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.796174,
+          37.778791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-lantern-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Lantern Lagoon Stage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.796456,
+          37.775642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-thunder-drop",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Thunder Drop Tower"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.80054,
+          37.78194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-starlight-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Starlight Amphitheater",
+        "snapped_to_link": "link-grove-volcano-voyager-segment-03",
+        "snap_distance_feet": 8.1,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804077391,
+          37.778212919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-galaxy-spin",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Galaxy Spin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804766,
+          37.780919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-river-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Riverwalk Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804625,
+          37.774791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-river-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Riverfront Music Stage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.806174,
+          37.77394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-south-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "South Gardens Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8007,
+          37.77515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-lagoon-junction",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Lagoon Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.7982,
+          37.7763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-ridge-overlook",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Ridge Overlook"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.7998,
+          37.7806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-west-grove",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "West Grove Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8027,
+          37.779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-river-fork",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "River Fork"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8025,
+          37.7752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-moonlit-merry-go-round",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Moonlit Merry-Go-Round",
+        "snapped_to_link": "link-south-canyon-splash",
+        "snap_distance_feet": 13.4,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799622836,
+          37.774668111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-canyon-splash",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "water_ride",
+        "name": "Canyon Splash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.7988,
+          37.7743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-oasis-theater",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Oasis Theater"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801,
+          37.7741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-kingdom-wheel",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Kingdom Wheel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802,
+          37.77415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-goblin-garden",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "interactive_attraction",
+        "name": "Goblin Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799,
+          37.77535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-aurora-carousel",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Aurora Carousel",
+        "snapped_to_link": "link-plaza-castle",
+        "snap_distance_feet": 184.0,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799414609,
+          37.776982757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-jungle-river-raft",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "water_ride",
+        "name": "Jungle River Raft",
+        "snapped_to_link": "link-east-lantern-stage-segment-01",
+        "snap_distance_feet": 53.2,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.797027264,
+          37.776850989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-comet-kids-coaster",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "roller_coaster",
+        "name": "Comet Kids Coaster",
+        "snapped_to_link": "link-east-lantern-stage-segment-02",
+        "snap_distance_feet": 33.8,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.79660984,
+          37.775967577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-celestial-conservatory",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Celestial Conservatory"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.798,
+          37.7754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-wildwood-zipline",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Wildwood Zipline"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8017,
+          37.781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-solar-flare",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Solar Flare",
+        "snapped_to_link": "link-north-thunder-drop-segment-03",
+        "snap_distance_feet": 90.0,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799632818,
+          37.781135907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-storm-surge",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "water_ride",
+        "name": "Storm Surge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.7972,
+          37.7808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-riddle-rally",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "interactive_attraction",
+        "name": "Riddle Rally",
+        "snapped_to_link": "link-north-west-segment-01",
+        "snap_distance_feet": 47.7,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.800470176,
+          37.779771621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-lost-temple",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "dark_ride",
+        "name": "Lost Temple",
+        "snapped_to_link": "link-river-fork-treetop-trek-segment-05",
+        "snap_distance_feet": 40.7,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804133366,
+          37.778963844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-volcano-voyager",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Volcano Voyager"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8048,
+          37.7778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-nebula-nights-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Nebula Nights Stage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8054,
+          37.7784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-echoes-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Echoes Stage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8054,
+          37.7796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-frostfire-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Frostfire Stage",
+        "snapped_to_link": "link-west-galaxy-segment-02",
+        "snap_distance_feet": 123.5,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.803923252,
+          37.780511537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-clockwork-theater",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Clockwork Theater",
+        "snapped_to_link": "link-river-plaza-segment-07",
+        "snap_distance_feet": 46.7,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.80175301,
+          37.775708067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-parade-stage",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "performance_stage",
+        "name": "Parade Stage",
+        "snapped_to_link": "link-west-plaza-segment-02",
+        "snap_distance_feet": 15.5,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801047756,
+          37.776509653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-meteor-mine",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Meteor Mine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8053,
+          37.7765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-reef-racers",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Reef Racers",
+        "snapped_to_link": "link-river-stage",
+        "snap_distance_feet": 124.5,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804753917,
+          37.774720175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-treetop-trek",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "attraction",
+        "attraction_type": "ride",
+        "name": "Treetop Trek",
+        "snapped_to_link": "link-west-galaxy-segment-02",
+        "snap_distance_feet": 135.7,
+        "snap_threshold_feet": 200.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804554763,
+          37.780816868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-01",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 01",
+        "intersects": [
+          "link-entrance-plaza",
+          "link-south-river-fork"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801990991,
+          37.775185861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-02",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 02",
+        "intersects": [
+          "link-north-west",
+          "link-west-grove-ridge"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801598147,
+          37.779607919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-03",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 03",
+        "intersects": [
+          "link-west-grove-ridge",
+          "link-west-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801912729,
+          37.779434357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-04",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 04",
+        "intersects": [
+          "link-east-lantern-stage",
+          "link-lagoon-comet-kids-coaster"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.796636546,
+          37.776024096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-05",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 05",
+        "intersects": [
+          "link-north-thunder-drop",
+          "link-ridge-solar-flare"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799540517,
+          37.781054095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-06",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 06",
+        "intersects": [
+          "link-north-thunder-drop",
+          "link-ridge-storm-surge"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799089837,
+          37.780654628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-07",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 07",
+        "intersects": [
+          "link-grove-lost-temple",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802812718,
+          37.779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-08",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 08",
+        "intersects": [
+          "link-grove-volcano-voyager",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.803689552,
+          37.778434541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-09",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 09",
+        "intersects": [
+          "link-grove-nebula-nights-stage",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802871981,
+          37.778961782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-10",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 10",
+        "intersects": [
+          "link-grove-echoes-stage",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802783831,
+          37.779018629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-11",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 11",
+        "intersects": [
+          "link-grove-frostfire-stage",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802729732,
+          37.779053517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-12",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 12",
+        "intersects": [
+          "link-river-fork-treetop-trek",
+          "link-west-starlight"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.80385685,
+          37.778326654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-13",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 13",
+        "intersects": [
+          "link-grove-frostfire-stage",
+          "link-west-galaxy"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.803398897,
+          37.780258015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-14",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 14",
+        "intersects": [
+          "link-river-fork-west-grove",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802513952,
+          37.775465088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-15",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 15",
+        "intersects": [
+          "link-river-fork-clockwork-theater",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.801998832,
+          37.775629573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-16",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 16",
+        "intersects": [
+          "link-river-fork-parade-stage",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802057588,
+          37.775610811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-17",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 17",
+        "intersects": [
+          "link-river-fork-meteor-mine",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.80284398,
+          37.775359705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-18",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 18",
+        "intersects": [
+          "link-river-fork-reef-racers",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.803626313,
+          37.775109895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-19",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 19",
+        "intersects": [
+          "link-river-fork-treetop-trek",
+          "link-river-plaza"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.802602735,
+          37.775436738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-20",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 20",
+        "intersects": [
+          "link-grove-volcano-voyager",
+          "link-river-fork-treetop-trek"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.803861123,
+          37.778336501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-21",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 21",
+        "intersects": [
+          "link-grove-nebula-nights-stage",
+          "link-river-fork-treetop-trek"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804021606,
+          37.77870631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-22",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 22",
+        "intersects": [
+          "link-grove-echoes-stage",
+          "link-river-fork-treetop-trek"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.804303712,
+          37.779356381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-23",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 23",
+        "intersects": [
+          "link-east-lantern-stage-segment-01-split-01",
+          "link-outer-celestial-pirate"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.79711672,
+          37.777040308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-24",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 24",
+        "intersects": [
+          "link-north-thunder-drop-segment-02",
+          "link-outer-storm-wildwood"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799362267,
+          37.780896101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-25",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 25",
+        "intersects": [
+          "link-lagoon-lantern",
+          "link-outer-celestial-pirate"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.797630972,
+          37.776085309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-26",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 26",
+        "intersects": [
+          "link-outer-storm-wildwood",
+          "link-ridge-thunder"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799978647,
+          37.780923495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-27",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 27",
+        "intersects": [
+          "link-lagoon-comet-kids-coaster-segment-01",
+          "link-outer-celestial-pirate"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.797574777,
+          37.776189666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node-intersection-28",
+      "properties": {
+        "feature_type": "node",
+        "node_type": "intersection",
+        "name": "Walkway Intersection 28",
+        "intersects": [
+          "link-outer-storm-wildwood",
+          "link-ridge-solar-flare-segment-01"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.799624149,
+          37.78090774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-entrance-plaza-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-entrance",
+        "to_node": "node-intersection-01",
+        "name": "Entry Promenade",
+        "parent_link_id": "link-entrance-plaza",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802301,
+            37.774961
+          ],
+          [
+            -116.801990991,
+            37.775185861
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-entrance-plaza-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-01",
+        "to_node": "node-plaza",
+        "name": "Entry Promenade",
+        "parent_link_id": "link-entrance-plaza",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801990991,
+            37.775185861
+          ],
+          [
+            -116.800892,
+            37.775983
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-plaza-castle-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-plaza",
+        "to_node": "node-aurora-carousel",
+        "name": "Castle Avenue",
+        "parent_link_id": "link-plaza-castle",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-aurora-carousel"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 44.9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.800892,
+            37.775983
+          ],
+          [
+            -116.800560599,
+            37.776267971
+          ],
+          [
+            -116.8002039,
+            37.776529587
+          ],
+          [
+            -116.799821903,
+            37.776767849
+          ],
+          [
+            -116.799414609,
+            37.776982757
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-plaza-castle-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-aurora-carousel",
+        "to_node": "node-castle",
+        "name": "Castle Avenue",
+        "parent_link_id": "link-plaza-castle",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-aurora-carousel"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799414609,
+            37.776982757
+          ],
+          [
+            -116.799132,
+            37.777174
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-castle-east",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-castle",
+        "to_node": "node-east-junction",
+        "name": "Sunrise Walk",
+        "parent_link_id": "link-castle-east",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 43.6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799132,
+            37.777174
+          ],
+          [
+            -116.7987768,
+            37.777423503
+          ],
+          [
+            -116.798400067,
+            37.777648504
+          ],
+          [
+            -116.7980018,
+            37.777849003
+          ],
+          [
+            -116.797582,
+            37.778025
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-north",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-east-junction",
+        "to_node": "node-north-junction",
+        "name": "Garden Climb",
+        "parent_link_id": "link-east-north",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797582,
+            37.778025
+          ],
+          [
+            -116.797725597,
+            37.778553316
+          ],
+          [
+            -116.797914463,
+            37.779069921
+          ],
+          [
+            -116.798148597,
+            37.779574816
+          ],
+          [
+            -116.798428,
+            37.780068
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-west-segment-01-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-north-junction",
+        "to_node": "node-riddle-rally",
+        "name": "Ridge Loop",
+        "parent_link_id": "link-north-west",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-riddle-rally"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 48.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.798428,
+            37.780068
+          ],
+          [
+            -116.798927295,
+            37.779945482
+          ],
+          [
+            -116.799434089,
+            37.779855246
+          ],
+          [
+            -116.799948383,
+            37.779797292
+          ],
+          [
+            -116.800470176,
+            37.779771621
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-west-segment-01-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-riddle-rally",
+        "to_node": "node-intersection-02",
+        "name": "Ridge Loop",
+        "parent_link_id": "link-north-west",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-riddle-rally"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.800470176,
+            37.779771621
+          ],
+          [
+            -116.801598147,
+            37.779607919
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-west-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-02",
+        "to_node": "node-west-junction",
+        "name": "Ridge Loop",
+        "parent_link_id": "link-north-west",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801598147,
+            37.779607919
+          ],
+          [
+            -116.801949,
+            37.779557
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-plaza-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-junction",
+        "to_node": "node-intersection-03",
+        "name": "Market Street",
+        "parent_link_id": "link-west-plaza",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801949,
+            37.779557
+          ],
+          [
+            -116.801912729,
+            37.779434357
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-plaza-segment-02-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-03",
+        "to_node": "node-parade-stage",
+        "name": "Market Street",
+        "parent_link_id": "link-west-plaza",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-parade-stage"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801912729,
+            37.779434357
+          ],
+          [
+            -116.801626914,
+            37.778716035
+          ],
+          [
+            -116.80138748,
+            37.777989144
+          ],
+          [
+            -116.801194427,
+            37.777253683
+          ],
+          [
+            -116.801047756,
+            37.776509653
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-plaza-segment-02-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-parade-stage",
+        "to_node": "node-plaza",
+        "name": "Market Street",
+        "parent_link_id": "link-west-plaza",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-parade-stage"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801047756,
+            37.776509653
+          ],
+          [
+            -116.800892,
+            37.775983
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-pirate-coaster",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-east-junction",
+        "to_node": "node-pirate-coaster",
+        "name": "Buccaneer Branch",
+        "parent_link_id": "link-east-pirate-coaster",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797582,
+            37.778025
+          ],
+          [
+            -116.796174,
+            37.778791
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lantern-stage-segment-01-split-01-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-east-junction",
+        "to_node": "node-intersection-23",
+        "name": "Lagoon Boardwalk",
+        "parent_link_id": "link-east-lantern-stage",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-jungle-river-raft",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797582,
+            37.778025
+          ],
+          [
+            -116.79711672,
+            37.777040308
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lantern-stage-segment-01-split-01-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-23",
+        "to_node": "node-jungle-river-raft",
+        "name": "Lagoon Boardwalk",
+        "parent_link_id": "link-east-lantern-stage",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-jungle-river-raft",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.79711672,
+            37.777040308
+          ],
+          [
+            -116.797027264,
+            37.776850989
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lantern-stage-segment-01-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-jungle-river-raft",
+        "to_node": "node-intersection-04",
+        "name": "Lagoon Boardwalk",
+        "parent_link_id": "link-east-lantern-stage",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-jungle-river-raft"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797027264,
+            37.776850989
+          ],
+          [
+            -116.796636546,
+            37.776024096
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lantern-stage-segment-02-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-04",
+        "to_node": "node-comet-kids-coaster",
+        "name": "Lagoon Boardwalk",
+        "parent_link_id": "link-east-lantern-stage",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-comet-kids-coaster"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.796636546,
+            37.776024096
+          ],
+          [
+            -116.79660984,
+            37.775967577
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lantern-stage-segment-02-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-comet-kids-coaster",
+        "to_node": "node-lantern-stage",
+        "name": "Lagoon Boardwalk",
+        "parent_link_id": "link-east-lantern-stage",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-comet-kids-coaster"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.79660984,
+            37.775967577
+          ],
+          [
+            -116.796456,
+            37.775642
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-thunder-drop-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-north-junction",
+        "to_node": "node-intersection-06",
+        "name": "Thunder Alley",
+        "parent_link_id": "link-north-thunder-drop",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.798428,
+            37.780068
+          ],
+          [
+            -116.799089837,
+            37.780654628
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-thunder-drop-segment-02-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-06",
+        "to_node": "node-intersection-24",
+        "name": "Thunder Alley",
+        "parent_link_id": "link-north-thunder-drop",
+        "segment_index": 2,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-intersection-24"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799089837,
+            37.780654628
+          ],
+          [
+            -116.799362267,
+            37.780896101
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-thunder-drop-segment-02-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-24",
+        "to_node": "node-intersection-05",
+        "name": "Thunder Alley",
+        "parent_link_id": "link-north-thunder-drop",
+        "segment_index": 2,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-intersection-24"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799362267,
+            37.780896101
+          ],
+          [
+            -116.799540517,
+            37.781054095
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-thunder-drop-segment-03-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-05",
+        "to_node": "node-solar-flare",
+        "name": "Thunder Alley",
+        "parent_link_id": "link-north-thunder-drop",
+        "segment_index": 3,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-solar-flare"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799540517,
+            37.781054095
+          ],
+          [
+            -116.799632818,
+            37.781135907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-thunder-drop-segment-03-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-solar-flare",
+        "to_node": "node-thunder-drop",
+        "name": "Thunder Alley",
+        "parent_link_id": "link-north-thunder-drop",
+        "segment_index": 3,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-solar-flare"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799632818,
+            37.781135907
+          ],
+          [
+            -116.80054,
+            37.78194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-junction",
+        "to_node": "node-intersection-11",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 1,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801949,
+            37.779557
+          ],
+          [
+            -116.802729732,
+            37.779053517
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-11",
+        "to_node": "node-intersection-10",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 2,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802729732,
+            37.779053517
+          ],
+          [
+            -116.802783831,
+            37.779018629
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-10",
+        "to_node": "node-intersection-07",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 3,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802783831,
+            37.779018629
+          ],
+          [
+            -116.802812718,
+            37.779
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-04",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-07",
+        "to_node": "node-intersection-09",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 4,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802812718,
+            37.779
+          ],
+          [
+            -116.802871981,
+            37.778961782
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-05",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-09",
+        "to_node": "node-intersection-08",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 5,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802871981,
+            37.778961782
+          ],
+          [
+            -116.803689552,
+            37.778434541
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-starlight-segment-06",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-08",
+        "to_node": "node-intersection-12",
+        "name": "Starlight Spur",
+        "parent_link_id": "link-west-starlight",
+        "segment_index": 6,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803689552,
+            37.778434541
+          ],
+          [
+            -116.80385685,
+            37.778326654
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-galaxy-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-junction",
+        "to_node": "node-intersection-13",
+        "name": "Galaxy Trail",
+        "parent_link_id": "link-west-galaxy",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801949,
+            37.779557
+          ],
+          [
+            -116.803398897,
+            37.780258015
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-galaxy-segment-02-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-13",
+        "to_node": "node-frostfire-stage",
+        "name": "Galaxy Trail",
+        "parent_link_id": "link-west-galaxy",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-frostfire-stage",
+          "node-treetop-trek"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 3,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803398897,
+            37.780258015
+          ],
+          [
+            -116.803923252,
+            37.780511537
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-galaxy-segment-02-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-frostfire-stage",
+        "to_node": "node-treetop-trek",
+        "name": "Galaxy Trail",
+        "parent_link_id": "link-west-galaxy",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-frostfire-stage",
+          "node-treetop-trek"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803923252,
+            37.780511537
+          ],
+          [
+            -116.804554763,
+            37.780816868
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-galaxy-segment-02-split-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-treetop-trek",
+        "to_node": "node-galaxy-spin",
+        "name": "Galaxy Trail",
+        "parent_link_id": "link-west-galaxy",
+        "segment_index": 2,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-frostfire-stage",
+          "node-treetop-trek"
+        ],
+        "subsegment_index": 3,
+        "subsegment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804554763,
+            37.780816868
+          ],
+          [
+            -116.804766,
+            37.780919
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-entrance-river",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-entrance",
+        "to_node": "node-river-junction",
+        "name": "Riverwalk South",
+        "parent_link_id": "link-entrance-river",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 53.9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802301,
+            37.774961
+          ],
+          [
+            -116.802888453,
+            37.774973606
+          ],
+          [
+            -116.803471603,
+            37.774949475
+          ],
+          [
+            -116.804050453,
+            37.774888606
+          ],
+          [
+            -116.804625,
+            37.774791
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-stage-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-junction",
+        "to_node": "node-reef-racers",
+        "name": "Riverfront Promenade",
+        "parent_link_id": "link-river-stage",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-reef-racers"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804625,
+            37.774791
+          ],
+          [
+            -116.804753917,
+            37.774720175
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-stage-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-reef-racers",
+        "to_node": "node-river-stage",
+        "name": "Riverfront Promenade",
+        "parent_link_id": "link-river-stage",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-reef-racers"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804753917,
+            37.774720175
+          ],
+          [
+            -116.806174,
+            37.77394
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-junction",
+        "to_node": "node-intersection-18",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 1,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804625,
+            37.774791
+          ],
+          [
+            -116.803626313,
+            37.775109895
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-18",
+        "to_node": "node-intersection-17",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 2,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803626313,
+            37.775109895
+          ],
+          [
+            -116.80284398,
+            37.775359705
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-17",
+        "to_node": "node-intersection-19",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 3,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.80284398,
+            37.775359705
+          ],
+          [
+            -116.802602735,
+            37.775436738
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-04",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-19",
+        "to_node": "node-intersection-14",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 4,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802602735,
+            37.775436738
+          ],
+          [
+            -116.802513952,
+            37.775465088
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-05",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-14",
+        "to_node": "node-intersection-16",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 5,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802513952,
+            37.775465088
+          ],
+          [
+            -116.802057588,
+            37.775610811
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-06",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-16",
+        "to_node": "node-intersection-15",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 6,
+        "segment_count": 7,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802057588,
+            37.775610811
+          ],
+          [
+            -116.801998832,
+            37.775629573
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-07",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-15",
+        "to_node": "node-clockwork-theater",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 7,
+        "segment_count": 7,
+        "split_node_ids": [
+          "node-clockwork-theater"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801998832,
+            37.775629573
+          ],
+          [
+            -116.80175301,
+            37.775708067
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-plaza-segment-07-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-clockwork-theater",
+        "to_node": "node-plaza",
+        "name": "Founders Riverwalk",
+        "parent_link_id": "link-river-plaza",
+        "segment_index": 7,
+        "segment_count": 7,
+        "split_node_ids": [
+          "node-clockwork-theater"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.80175301,
+            37.775708067
+          ],
+          [
+            -116.800892,
+            37.775983
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-entrance-south",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-entrance",
+        "to_node": "node-south-junction",
+        "name": "Garden Gate Walk",
+        "parent_link_id": "link-entrance-south",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802301,
+            37.774961
+          ],
+          [
+            -116.8007,
+            37.77515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-plaza-south",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-plaza",
+        "to_node": "node-south-junction",
+        "name": "South Gardens Walk",
+        "parent_link_id": "link-plaza-south",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.800892,
+            37.775983
+          ],
+          [
+            -116.8007,
+            37.77515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-river-fork-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-south-junction",
+        "to_node": "node-intersection-01",
+        "name": "Garden-to-River Path",
+        "parent_link_id": "link-south-river-fork",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8007,
+            37.77515
+          ],
+          [
+            -116.801990991,
+            37.775185861
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-river-fork-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-01",
+        "to_node": "node-river-fork",
+        "name": "Garden-to-River Path",
+        "parent_link_id": "link-south-river-fork",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801990991,
+            37.775185861
+          ],
+          [
+            -116.8025,
+            37.7752
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-river-fork",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-junction",
+        "to_node": "node-river-fork",
+        "name": "River Fork Approach",
+        "parent_link_id": "link-river-river-fork",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 50.5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804625,
+            37.774791
+          ],
+          [
+            -116.804109274,
+            37.774943637
+          ],
+          [
+            -116.803583199,
+            37.775062683
+          ],
+          [
+            -116.803046774,
+            37.775148137
+          ],
+          [
+            -116.8025,
+            37.7752
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-east-lagoon",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-east-junction",
+        "to_node": "node-lagoon-junction",
+        "name": "Lagoon Connector",
+        "parent_link_id": "link-east-lagoon",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 52.4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797582,
+            37.778025
+          ],
+          [
+            -116.797671026,
+            37.777579096
+          ],
+          [
+            -116.797803701,
+            37.777142962
+          ],
+          [
+            -116.797980026,
+            37.776716596
+          ],
+          [
+            -116.7982,
+            37.7763
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-lagoon-lantern-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-lagoon-junction",
+        "to_node": "node-intersection-25",
+        "name": "Lagoon Stage Loop",
+        "parent_link_id": "link-lagoon-lantern",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7982,
+            37.7763
+          ],
+          [
+            -116.797630972,
+            37.776085309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-lagoon-lantern-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-25",
+        "to_node": "node-lantern-stage",
+        "name": "Lagoon Stage Loop",
+        "parent_link_id": "link-lagoon-lantern",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797630972,
+            37.776085309
+          ],
+          [
+            -116.796456,
+            37.775642
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-north-ridge",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-north-junction",
+        "to_node": "node-ridge-overlook",
+        "name": "Ridge Overlook Path",
+        "parent_link_id": "link-north-ridge",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.798428,
+            37.780068
+          ],
+          [
+            -116.7998,
+            37.7806
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-thunder-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-ridge-overlook",
+        "to_node": "node-intersection-26",
+        "name": "Tower View Walk",
+        "parent_link_id": "link-ridge-thunder",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-26"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7998,
+            37.7806
+          ],
+          [
+            -116.799978647,
+            37.780923495
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-thunder-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-26",
+        "to_node": "node-thunder-drop",
+        "name": "Tower View Walk",
+        "parent_link_id": "link-ridge-thunder",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-26"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799978647,
+            37.780923495
+          ],
+          [
+            -116.80054,
+            37.78194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-grove",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-junction",
+        "to_node": "node-west-grove",
+        "name": "Grove Connector",
+        "parent_link_id": "link-west-grove",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801949,
+            37.779557
+          ],
+          [
+            -116.8027,
+            37.779
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-grove-ridge-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-03",
+        "name": "Ridge-to-Grove Trail",
+        "parent_link_id": "link-west-grove-ridge",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.801912729,
+            37.779434357
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-grove-ridge-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-03",
+        "to_node": "node-intersection-02",
+        "name": "Ridge-to-Grove Trail",
+        "parent_link_id": "link-west-grove-ridge",
+        "segment_index": 2,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801912729,
+            37.779434357
+          ],
+          [
+            -116.801598147,
+            37.779607919
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-west-grove-ridge-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-02",
+        "to_node": "node-ridge-overlook",
+        "name": "Ridge-to-Grove Trail",
+        "parent_link_id": "link-west-grove-ridge",
+        "segment_index": 3,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 50.6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801598147,
+            37.779607919
+          ],
+          [
+            -116.801110955,
+            37.779813302
+          ],
+          [
+            -116.800648866,
+            37.78004711
+          ],
+          [
+            -116.800211881,
+            37.780309343
+          ],
+          [
+            -116.7998,
+            37.7806
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-west-grove-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-14",
+        "name": "Western River Trail",
+        "parent_link_id": "link-river-fork-west-grove",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.802513952,
+            37.775465088
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-west-grove-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-14",
+        "to_node": "node-west-grove",
+        "name": "Western River Trail",
+        "parent_link_id": "link-river-fork-west-grove",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802513952,
+            37.775465088
+          ],
+          [
+            -116.80263185,
+            37.776346469
+          ],
+          [
+            -116.802702157,
+            37.777229414
+          ],
+          [
+            -116.802724874,
+            37.778113925
+          ],
+          [
+            -116.8027,
+            37.779
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-canyon-splash-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-south-junction",
+        "to_node": "node-moonlit-merry-go-round",
+        "name": "Canyon Splash Spur",
+        "parent_link_id": "link-south-canyon-splash",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-moonlit-merry-go-round"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8007,
+            37.77515
+          ],
+          [
+            -116.799622836,
+            37.774668111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-canyon-splash-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-moonlit-merry-go-round",
+        "to_node": "node-canyon-splash",
+        "name": "Canyon Splash Spur",
+        "parent_link_id": "link-south-canyon-splash",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-moonlit-merry-go-round"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799622836,
+            37.774668111
+          ],
+          [
+            -116.7988,
+            37.7743
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-oasis-theater",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-south-junction",
+        "to_node": "node-oasis-theater",
+        "name": "Oasis Theater Spur",
+        "parent_link_id": "link-south-oasis-theater",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8007,
+            37.77515
+          ],
+          [
+            -116.801,
+            37.7741
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-kingdom-wheel",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-south-junction",
+        "to_node": "node-kingdom-wheel",
+        "name": "Wheelhouse Spur",
+        "parent_link_id": "link-south-kingdom-wheel",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 41.9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8007,
+            37.77515
+          ],
+          [
+            -116.801062956,
+            37.774930825
+          ],
+          [
+            -116.801400608,
+            37.7746911
+          ],
+          [
+            -116.801712956,
+            37.774430825
+          ],
+          [
+            -116.802,
+            37.77415
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-south-goblin-garden",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-south-junction",
+        "to_node": "node-goblin-garden",
+        "name": "Goblin Garden Spur",
+        "parent_link_id": "link-south-goblin-garden",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8007,
+            37.77515
+          ],
+          [
+            -116.799,
+            37.77535
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-lagoon-comet-kids-coaster-segment-01-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-lagoon-junction",
+        "to_node": "node-intersection-27",
+        "name": "Comet Kids Spur",
+        "parent_link_id": "link-lagoon-comet-kids-coaster",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-intersection-27"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7982,
+            37.7763
+          ],
+          [
+            -116.797574777,
+            37.776189666
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-lagoon-comet-kids-coaster-segment-01-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-27",
+        "to_node": "node-intersection-04",
+        "name": "Comet Kids Spur",
+        "parent_link_id": "link-lagoon-comet-kids-coaster",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-intersection-27"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797574777,
+            37.776189666
+          ],
+          [
+            -116.796636546,
+            37.776024096
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-lagoon-celestial-conservatory",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-lagoon-junction",
+        "to_node": "node-celestial-conservatory",
+        "name": "Conservatory Spur",
+        "parent_link_id": "link-lagoon-celestial-conservatory",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7982,
+            37.7763
+          ],
+          [
+            -116.798,
+            37.7754
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-wildwood-zipline",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-ridge-overlook",
+        "to_node": "node-wildwood-zipline",
+        "name": "Wildwood Zipline Spur",
+        "parent_link_id": "link-ridge-wildwood-zipline",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 45.4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7998,
+            37.7806
+          ],
+          [
+            -116.800259818,
+            37.780745052
+          ],
+          [
+            -116.800729757,
+            37.78086007
+          ],
+          [
+            -116.801209818,
+            37.780945052
+          ],
+          [
+            -116.8017,
+            37.781
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-solar-flare-segment-01-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-ridge-overlook",
+        "to_node": "node-intersection-28",
+        "name": "Solar Flare Spur",
+        "parent_link_id": "link-ridge-solar-flare",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-intersection-28"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7998,
+            37.7806
+          ],
+          [
+            -116.799624149,
+            37.78090774
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-solar-flare-segment-01-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-28",
+        "to_node": "node-intersection-05",
+        "name": "Solar Flare Spur",
+        "parent_link_id": "link-ridge-solar-flare",
+        "segment_index": 1,
+        "segment_count": 2,
+        "split_node_ids": [
+          "node-intersection-28"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799624149,
+            37.78090774
+          ],
+          [
+            -116.799540517,
+            37.781054095
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-storm-surge-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-ridge-overlook",
+        "to_node": "node-intersection-06",
+        "name": "Storm Surge Spur",
+        "parent_link_id": "link-ridge-storm-surge",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7998,
+            37.7806
+          ],
+          [
+            -116.799089837,
+            37.780654628
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-ridge-storm-surge-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-06",
+        "to_node": "node-storm-surge",
+        "name": "Storm Surge Spur",
+        "parent_link_id": "link-ridge-storm-surge",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 43.8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799089837,
+            37.780654628
+          ],
+          [
+            -116.79861186,
+            37.78064616
+          ],
+          [
+            -116.798137562,
+            37.780667566
+          ],
+          [
+            -116.797666942,
+            37.780718846
+          ],
+          [
+            -116.7972,
+            37.7808
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-lost-temple-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-07",
+        "name": "Lost Temple Spur",
+        "parent_link_id": "link-grove-lost-temple",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.802812718,
+            37.779
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-volcano-voyager-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-08",
+        "name": "Volcano Voyager Spur",
+        "parent_link_id": "link-grove-volcano-voyager",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.803689552,
+            37.778434541
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-volcano-voyager-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-08",
+        "to_node": "node-intersection-20",
+        "name": "Volcano Voyager Spur",
+        "parent_link_id": "link-grove-volcano-voyager",
+        "segment_index": 2,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803689552,
+            37.778434541
+          ],
+          [
+            -116.803861123,
+            37.778336501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-volcano-voyager-segment-03-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-20",
+        "to_node": "node-starlight-stage",
+        "name": "Volcano Voyager Spur",
+        "parent_link_id": "link-grove-volcano-voyager",
+        "segment_index": 3,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-starlight-stage"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803861123,
+            37.778336501
+          ],
+          [
+            -116.804077391,
+            37.778212919
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-volcano-voyager-segment-03-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-starlight-stage",
+        "to_node": "node-volcano-voyager",
+        "name": "Volcano Voyager Spur",
+        "parent_link_id": "link-grove-volcano-voyager",
+        "segment_index": 3,
+        "segment_count": 3,
+        "split_node_ids": [
+          "node-starlight-stage"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804077391,
+            37.778212919
+          ],
+          [
+            -116.8048,
+            37.7778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-nebula-nights-stage-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-09",
+        "name": "Nebula Nights Spur",
+        "parent_link_id": "link-grove-nebula-nights-stage",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.802871981,
+            37.778961782
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-nebula-nights-stage-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-09",
+        "to_node": "node-intersection-21",
+        "name": "Nebula Nights Spur",
+        "parent_link_id": "link-grove-nebula-nights-stage",
+        "segment_index": 2,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802871981,
+            37.778961782
+          ],
+          [
+            -116.804021606,
+            37.77870631
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-nebula-nights-stage-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-21",
+        "to_node": "node-nebula-nights-stage",
+        "name": "Nebula Nights Spur",
+        "parent_link_id": "link-grove-nebula-nights-stage",
+        "segment_index": 3,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804021606,
+            37.77870631
+          ],
+          [
+            -116.8054,
+            37.7784
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-echoes-stage-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-10",
+        "name": "Echoes Stage Spur",
+        "parent_link_id": "link-grove-echoes-stage",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.802783831,
+            37.779018629
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-echoes-stage-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-10",
+        "to_node": "node-intersection-22",
+        "name": "Echoes Stage Spur",
+        "parent_link_id": "link-grove-echoes-stage",
+        "segment_index": 2,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802783831,
+            37.779018629
+          ],
+          [
+            -116.804303712,
+            37.779356381
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-echoes-stage-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-22",
+        "to_node": "node-echoes-stage",
+        "name": "Echoes Stage Spur",
+        "parent_link_id": "link-grove-echoes-stage",
+        "segment_index": 3,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804303712,
+            37.779356381
+          ],
+          [
+            -116.8054,
+            37.7796
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-frostfire-stage-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-west-grove",
+        "to_node": "node-intersection-11",
+        "name": "Frostfire Stage Spur",
+        "parent_link_id": "link-grove-frostfire-stage",
+        "segment_index": 1,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8027,
+            37.779
+          ],
+          [
+            -116.802729732,
+            37.779053517
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-grove-frostfire-stage-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-11",
+        "to_node": "node-intersection-13",
+        "name": "Frostfire Stage Spur",
+        "parent_link_id": "link-grove-frostfire-stage",
+        "segment_index": 2,
+        "segment_count": 3,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802729732,
+            37.779053517
+          ],
+          [
+            -116.803398897,
+            37.780258015
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-clockwork-theater-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-15",
+        "name": "Clockwork Theater Spur",
+        "parent_link_id": "link-river-fork-clockwork-theater",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.801998832,
+            37.775629573
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-parade-stage-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-16",
+        "name": "Parade Stage Spur",
+        "parent_link_id": "link-river-fork-parade-stage",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.802057588,
+            37.775610811
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-meteor-mine-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-17",
+        "name": "Meteor Mine Spur",
+        "parent_link_id": "link-river-fork-meteor-mine",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.80284398,
+            37.775359705
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-meteor-mine-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-17",
+        "to_node": "node-meteor-mine",
+        "name": "Meteor Mine Spur",
+        "parent_link_id": "link-river-fork-meteor-mine",
+        "segment_index": 2,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.80284398,
+            37.775359705
+          ],
+          [
+            -116.803421797,
+            37.775693471
+          ],
+          [
+            -116.80402374,
+            37.775994776
+          ],
+          [
+            -116.804649807,
+            37.776263619
+          ],
+          [
+            -116.8053,
+            37.7765
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-reef-racers-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-18",
+        "name": "Reef Racers Spur",
+        "parent_link_id": "link-river-fork-reef-racers",
+        "segment_index": 1,
+        "segment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.803626313,
+            37.775109895
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-fork",
+        "to_node": "node-intersection-19",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 1,
+        "segment_count": 6,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8025,
+            37.7752
+          ],
+          [
+            -116.802602735,
+            37.775436738
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-19",
+        "to_node": "node-intersection-12",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 2,
+        "segment_count": 6,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802602735,
+            37.775436738
+          ],
+          [
+            -116.802848681,
+            37.776177539
+          ],
+          [
+            -116.803139682,
+            37.776906125
+          ],
+          [
+            -116.803475739,
+            37.777622497
+          ],
+          [
+            -116.80385685,
+            37.778326654
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-12",
+        "to_node": "node-intersection-20",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 3,
+        "segment_count": 6,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.80385685,
+            37.778326654
+          ],
+          [
+            -116.803861123,
+            37.778336501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-04",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-20",
+        "to_node": "node-intersection-21",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 4,
+        "segment_count": 6,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.803861123,
+            37.778336501
+          ],
+          [
+            -116.804021606,
+            37.77870631
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-05-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-21",
+        "to_node": "node-lost-temple",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 5,
+        "segment_count": 6,
+        "split_node_ids": [
+          "node-lost-temple"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 2,
+        "accessible": "Yes",
+        "covered": "Yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804021606,
+            37.77870631
+          ],
+          [
+            -116.804133366,
+            37.778963844
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-river-fork-treetop-trek-segment-05-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-lost-temple",
+        "to_node": "node-intersection-22",
+        "name": "Treetop Trek Spur",
+        "parent_link_id": "link-river-fork-treetop-trek",
+        "segment_index": 5,
+        "segment_count": 6,
+        "split_node_ids": [
+          "node-lost-temple"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 2,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804133366,
+            37.778963844
+          ],
+          [
+            -116.804303712,
+            37.779356381
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-pirate-storm",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-pirate-coaster",
+        "to_node": "node-storm-surge",
+        "name": "Pirate Coast Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-pirate-storm",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.796174,
+            37.778791
+          ],
+          [
+            -116.796364246,
+            37.779314388
+          ],
+          [
+            -116.796598662,
+            37.779823684
+          ],
+          [
+            -116.796877246,
+            37.780318888
+          ],
+          [
+            -116.7972,
+            37.7808
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-storm-wildwood-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-storm-surge",
+        "to_node": "node-intersection-24",
+        "name": "Northwind Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-storm-wildwood",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-24",
+          "node-intersection-28",
+          "node-intersection-26"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 50.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7972,
+            37.7808
+          ],
+          [
+            -116.797744214,
+            37.780772754
+          ],
+          [
+            -116.798285997,
+            37.780779689
+          ],
+          [
+            -116.798825348,
+            37.780820805
+          ],
+          [
+            -116.799362267,
+            37.780896101
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-storm-wildwood-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-24",
+        "to_node": "node-intersection-28",
+        "name": "Northwind Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-storm-wildwood",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-24",
+          "node-intersection-28",
+          "node-intersection-26"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799362267,
+            37.780896101
+          ],
+          [
+            -116.799624149,
+            37.78090774
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-storm-wildwood-split-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-28",
+        "to_node": "node-intersection-26",
+        "name": "Northwind Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-storm-wildwood",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-24",
+          "node-intersection-28",
+          "node-intersection-26"
+        ],
+        "subsegment_index": 3,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799624149,
+            37.78090774
+          ],
+          [
+            -116.799978647,
+            37.780923495
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-storm-wildwood-split-04",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-26",
+        "to_node": "node-wildwood-zipline",
+        "name": "Northwind Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-storm-wildwood",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-24",
+          "node-intersection-28",
+          "node-intersection-26"
+        ],
+        "subsegment_index": 4,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799978647,
+            37.780923495
+          ],
+          [
+            -116.8017,
+            37.781
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-wildwood-galaxy",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-wildwood-zipline",
+        "to_node": "node-galaxy-spin",
+        "name": "Skyline Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-wildwood-galaxy",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8017,
+            37.781
+          ],
+          [
+            -116.802464113,
+            37.78092331
+          ],
+          [
+            -116.803229818,
+            37.780884247
+          ],
+          [
+            -116.803997113,
+            37.78088281
+          ],
+          [
+            -116.804766,
+            37.780919
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-galaxy-echoes",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-galaxy-spin",
+        "to_node": "node-echoes-stage",
+        "name": "West Ridge Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-galaxy-echoes",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 41.2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.804766,
+            37.780919
+          ],
+          [
+            -116.804874436,
+            37.780574217
+          ],
+          [
+            -116.805016248,
+            37.780239456
+          ],
+          [
+            -116.805191436,
+            37.779914717
+          ],
+          [
+            -116.8054,
+            37.7796
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-echoes-nebula",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-echoes-stage",
+        "to_node": "node-nebula-nights-stage",
+        "name": "Nebula Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-echoes-nebula",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8054,
+            37.7796
+          ],
+          [
+            -116.8054,
+            37.7784
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-nebula-meteor",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-nebula-nights-stage",
+        "to_node": "node-meteor-mine",
+        "name": "Meteor Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-nebula-meteor",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8054,
+            37.7784
+          ],
+          [
+            -116.805303614,
+            37.777927347
+          ],
+          [
+            -116.805254819,
+            37.77745313
+          ],
+          [
+            -116.805253614,
+            37.776977347
+          ],
+          [
+            -116.8053,
+            37.7765
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-meteor-river-stage",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-meteor-mine",
+        "to_node": "node-river-stage",
+        "name": "Riverfront Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-meteor-river-stage",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8053,
+            37.7765
+          ],
+          [
+            -116.80544952,
+            37.775845288
+          ],
+          [
+            -116.805645026,
+            37.775200384
+          ],
+          [
+            -116.80588652,
+            37.774565288
+          ],
+          [
+            -116.806174,
+            37.77394
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-river-stage-kingdom-wheel",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-river-stage",
+        "to_node": "node-kingdom-wheel",
+        "name": "Southwest Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-river-stage-kingdom-wheel",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.806174,
+            37.77394
+          ],
+          [
+            -116.805125961,
+            37.773940000
+          ],
+          [
+            -116.804080948,
+            37.773969857
+          ],
+          [
+            -116.803038961,
+            37.774041143
+          ],
+          [
+            -116.802,
+            37.77415
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-kingdom-wheel-oasis",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-kingdom-wheel",
+        "to_node": "node-oasis-theater",
+        "name": "South Gardens Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-kingdom-wheel-oasis",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.802,
+            37.77415
+          ],
+          [
+            -116.801,
+            37.7741
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-oasis-canyon",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-oasis-theater",
+        "to_node": "node-canyon-splash",
+        "name": "Canyon Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-oasis-canyon",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 51.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.801,
+            37.7741
+          ],
+          [
+            -116.800457591,
+            37.774202166
+          ],
+          [
+            -116.799910122,
+            37.774269554
+          ],
+          [
+            -116.799357591,
+            37.774302166
+          ],
+          [
+            -116.7988,
+            37.7743
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-canyon-celestial",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-canyon-splash",
+        "to_node": "node-celestial-conservatory",
+        "name": "East Garden Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-canyon-celestial",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.7988,
+            37.7743
+          ],
+          [
+            -116.798,
+            37.7754
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-celestial-pirate-split-01",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-celestial-conservatory",
+        "to_node": "node-intersection-25",
+        "name": "Pirate Lagoon Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-celestial-pirate",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25",
+          "node-intersection-27",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 1,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.798,
+            37.7754
+          ],
+          [
+            -116.797630972,
+            37.776085309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-celestial-pirate-split-02",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-25",
+        "to_node": "node-intersection-27",
+        "name": "Pirate Lagoon Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-celestial-pirate",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25",
+          "node-intersection-27",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 2,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797630972,
+            37.776085309
+          ],
+          [
+            -116.797574777,
+            37.776189666
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-celestial-pirate-split-03",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-27",
+        "to_node": "node-intersection-23",
+        "name": "Pirate Lagoon Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-celestial-pirate",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25",
+          "node-intersection-27",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 3,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.797574777,
+            37.776189666
+          ],
+          [
+            -116.79711672,
+            37.777040308
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-outer-celestial-pirate-split-04",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-intersection-23",
+        "to_node": "node-pirate-coaster",
+        "name": "Pirate Lagoon Rim Path",
+        "path_role": "outer_path",
+        "parent_link_id": "link-outer-celestial-pirate",
+        "segment_index": 1,
+        "segment_count": 1,
+        "split_node_ids": [
+          "node-intersection-25",
+          "node-intersection-27",
+          "node-intersection-23"
+        ],
+        "subsegment_index": 4,
+        "subsegment_count": 4,
+        "accessible": "No",
+        "covered": "No",
+        "curved": "Yes",
+        "curve_type": "gentle_quadratic_bend",
+        "curve_offset_feet": 55.0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.79711672,
+            37.777040308
+          ],
+          [
+            -116.796946781,
+            37.777500096
+          ],
+          [
+            -116.796733015,
+            37.777945141
+          ],
+          [
+            -116.796475421,
+            37.778375442
+          ],
+          [
+            -116.796174,
+            37.778791
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-alt-volcano-nebula",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-volcano-voyager",
+        "to_node": "node-nebula-nights-stage",
+        "name": "Volcano-to-Nebula Connector",
+        "path_role": "alternate_attraction_path",
+        "parent_link_id": "link-alt-volcano-nebula",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.8048,
+            37.7778
+          ],
+          [
+            -116.8054,
+            37.7784
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "link-alt-goblin-celestial",
+      "properties": {
+        "feature_type": "link",
+        "link_type": "walkway",
+        "from_node": "node-goblin-garden",
+        "to_node": "node-celestial-conservatory",
+        "name": "Goblin-to-Celestial Connector",
+        "path_role": "alternate_attraction_path",
+        "parent_link_id": "link-alt-goblin-celestial",
+        "segment_index": 1,
+        "segment_count": 1,
+        "accessible": "No",
+        "covered": "No"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -116.799,
+            37.77535
+          ],
+          [
+            -116.798,
+            37.7754
+          ]
+        ]
+      }
+    }
+  ],
+  "intersection_count": 28,
+  "walkway_segment_count": 118,
+  "snap_threshold_feet": 200.0,
+  "snapped_attraction_count": 13,
+  "orphan_link_count": 14,
+  "additional_parent_link_count": 14,
+  "outer_path_parent_link_count": 12,
+  "alternate_attraction_path_count": 2,
+  "access_covered_link_count": 20,
+  "curvature_threshold_feet": 500.0,
+  "curved_link_count": 24
+}
