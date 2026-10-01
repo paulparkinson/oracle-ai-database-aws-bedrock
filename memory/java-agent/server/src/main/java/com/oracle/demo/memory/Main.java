@@ -39,6 +39,13 @@ public final class Main {
                 UcpDataSourceConfiguration.fromEnvironment(System.getenv());
         new DatabaseSetup(dataSource).initialize();
         new ParkDatabaseSetup(dataSource).initialize();
+        if (args.length == 1 && "--setup-db".equals(args[0])) {
+            System.out.println("Memory and Memory Quest database setup complete.");
+            oracle.ucp.admin.UniversalConnectionPoolManagerImpl
+                    .getUniversalConnectionPoolManager()
+                    .destroyConnectionPool(dataSource.getConnectionPoolName());
+            return;
+        }
         new Main(
                 webRoot,
                 new MemoryRepository(dataSource),

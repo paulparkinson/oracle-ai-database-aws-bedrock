@@ -871,11 +871,12 @@ class MagicRequestHandler(BaseHTTPRequestHandler):
 def main() -> None:
     port = int(os.environ.get("MEMORY_PYTHON_PORT", "8092"))
     service = MagicMemoryService()
-    server = ThreadingHTTPServer(("127.0.0.1", port), MagicRequestHandler)
+    host = os.environ.get("MEMORY_PYTHON_HOST", "127.0.0.1")
+    server = ThreadingHTTPServer((host, port), MagicRequestHandler)
     server.service = service  # type: ignore[attr-defined]
     print(
         "Python Oracle AI Agent Memory demo listening on "
-        f"http://127.0.0.1:{port}"
+        f"http://{host}:{port}"
     )
     try:
         server.serve_forever()

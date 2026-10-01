@@ -1,2 +1,3 @@
 oracleagentmemory==26.6.0
 litellm==1.84.10
+python-dotenv==1.2.3

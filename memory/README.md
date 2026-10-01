@@ -36,6 +36,12 @@ second lane exposes lifecycle and transaction mechanics for teaching.
 
 ## Run
 
+For the full app on an existing AWS instance and Oracle Database@AWS, follow
+[`../docs.md`](../docs.md). The scroll-through video shows the Java app on
+port 8091; the Python app on port 8092 adds DDS and AR. The AWS instance scripts
+deploy both as services. Configuration may be supplied with `MEMORY_ENV_FILE`
+or exported environment variables; Linux runners use tools from `PATH`.
+
 The runners reuse `financial/setup/.env` if it exists. Otherwise:
 
 ```bash

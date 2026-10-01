@@ -156,6 +156,10 @@ References: [Titan embedding parameters](https://docs.aws.amazon.com/bedrock/lat
 ## Migrated Oracle AI Agent Memory demo
 
 The complete memory application is under [`memory/`](memory/). Use
+[`docs.md`](docs.md) to deploy the full Java app shown in the theme park video
+and the Python companion to an existing AWS instance with `paulparkdbaws`.
+The instance deployment scripts are in [`memory/aws/`](memory/aws/).
+Use
 [`memory/README.md`](memory/README.md) for the local Python and Java lanes,
 database inspector, Deep Data Security proof, Memory Quest, and walkthrough
 source. For AWS container deployment and the separate Bedrock verification

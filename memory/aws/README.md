@@ -1,5 +1,22 @@
 # Run the memory demo on AWS
 
+## Full app on an existing AWS instance
+
+Follow the public [`../../docs.md`](../../docs.md) runbook for the Java app
+shown in the theme park scroll-through video **and** the Python companion.
+`setup-database.py` prepares a dedicated schema and `ALLMINILM` on the verified
+database, `deploy-instance.sh user@host [key]` builds and transfers both apps,
+and `install-instance.sh` installs `themepark-java` and `themepark-python`
+systemd services. Open ports 8091 and 8092 through an SSH tunnel. Wallets and
+application credentials are transferred separately and excluded from the app
+bundle. The Java library is compiled on the workstation; Maven and its source
+clone are not needed on the instance.
+
+The Python-only ECS container path below is a separate deployment option;
+it does not include the Java app, Ollama, or shared quest database bootstrap.
+
+## Python container alternative
+
 This deployment runs the Python Oracle AI Agent Memory browser application in
 an ECS/Fargate task and connects it to Oracle Database@AWS over a private
 network path. It does not put a wallet, password, or AWS key in the container
