@@ -1,5 +1,11 @@
 # Oracle + Bedrock RAG smoke test
 
+**Live end-to-end verification passed on October 9, 2026.** Start with the
+[interactive RAG demo and run instructions](rag/README.md) and
+[tested walkthrough](rag/blog.html). `rag/` contains the new focused demo;
+`memory/` remains the separate agent-memory application; the root smoke test
+remains the compatibility entry point. [Restart checkpoint](RESUME.md).
+
 Standalone repository: [paulparkinson/oracle-ai-database-aws-bedrock](https://github.com/paulparkinson/oracle-ai-database-aws-bedrock). See [migration notes](MIGRATION.md) and [included skills](AGENTS.md).
 
 This small integration test calls real services with three synthetic documents:
@@ -16,32 +22,18 @@ tests RAG **without creating tables or changing existing data**. It is not a
 persistent ingestion/index benchmark and does not read your business documents.
 No Bedrock Knowledge Base is needed. See [the blog](blog.html) for the larger design.
 
-## Verification status (September 22, 2026)
+## Verification status (October 9, 2026)
 
-Python syntax/CLI checks and five local checks with mocked services passed,
-covering the full orchestration, wrong-account/database rejection, bad retrieval,
-and invalid embeddings/answers. These checks do not validate Oracle SQL execution
-or real model output.
+The full RAG smoke test passed with real Titan V2 embeddings, live Oracle
+retrieval and Nova Lite generation. Oracle ranked `TRANSFER_POLICY` first
+(cosine distance 0.076545), and the answer returned `37 hours [TRANSFER_POLICY]`.
+The interactive browser also passed warranty, recycling and insufficient-evidence
+cases. No persistent database data was changed. Four offline regression checks
+and JavaScript syntax checks passed; these are separate from the live checks.
 
-Direct AWS CloudShell calls in account `054037143469`, region `us-east-1`,
-**succeeded after selecting the assigned `Multicloud-Engineering-Bedrock` role**:
-
-- `InvokeModel` on `amazon.titan-embed-text-v2:0`.
-- `Converse` on `amazon.nova-lite-v1:0` (requires `bedrock:InvokeModel`).
-
-The earlier `AccessDeniedException` errors came from the different
-`Field-Engineering-Standard` role. Inspection of its eight managed policies and
-one inline policy found no Bedrock invocation grant. Renewing the AWS access portal
-revealed the assigned `Multicloud-Engineering-Bedrock` permission set. Selecting it
-resolved both model invocation failures without changing IAM permissions.
-The Oracle connection and the exact retrieval SQL have now **passed against live
-paulparkdbaws**, using synthetic 1,024-dimensional vectors. The expected document
-ranked first with cosine distance 0.0; no database data was changed. The driver
-reported database version `23.26.3.3.0`. Wallet and database credentials are configured.
-
-The full RAG test has **not passed against live services**. Its local execution
-stops with `NoCredentialsError`: this machine needs an authenticated AWS SDK session.
-The browser session alone does not supply credentials to local Python.
+The current RAG demo uses AWS SSO plus a separately configured Oracle login.
+It is not an EKS passwordless-authentication result. Quick signup was attempted
+after approval and returned AccessDeniedException; no subscription was created.
 
 No admin change is currently needed for these two models: use the assigned Bedrock
 role. The [example policy](bedrock-invoke-policy.json) documents the narrow direct
@@ -62,10 +54,10 @@ chmod 600 .env
 ```
 
 Fill in `.env` locally. Use **paulparkdbaws**, the database created in AWS account
-`054037143469`, region `us-east-1`. Copy its exact service alias from the downloaded
-wallet's `tnsnames.ora`; the example alias is not a discovered connection string.
+`054037143469`, region `us-east-1`. Use a TCPS EZConnect+ DSN with the exact
+host/service from the database connection information, not the placeholder.
 The existing database requires mTLS. Python Thin mode needs the extracted wallet
-directory including `ewallet.pem` and `tnsnames.ora`, plus the wallet password if
+directory including `ewallet.pem`, plus the wallet password if
 the PEM key is encrypted. The wallet password is distinct from the database-user
 password. A user able to connect and run the SELECT expressions is sufficient;
 no `CREATE TABLE` privilege or administrator account is required.
@@ -74,8 +66,8 @@ The test uses `RAG_DB_*` variables to avoid accidentally using another project's
 `ORACLE_*` settings. It also accepts this project's existing `DB_USERNAME`,
 `DB_PASSWORD`, `DB_WALLET_DIR` (or `TNS_ADMIN`), and `DB_WALLET_PASSWORD`
 (or `WALLET_PASSWORD`) settings;
-`RAG_DB_*` takes precedence. Set `RAG_DB_DSN=paulparkdbaws_low` for the verified
-low service alias in the `Wallet_paulparkdbaws` wallet.
+`RAG_DB_*` takes precedence. Set `RAG_DB_DSN=tcps://host:1522/service` using
+the actual low-service host/name for the target database.
 It verifies the AWS account and Oracle database/service name
 before the RAG model calls. Override the `RAG_EXPECTED_*` settings only when
 intentionally testing a different target. No passwords, wallets, or tokens belong
@@ -123,7 +115,7 @@ PASS: Bedrock embeddings -> Oracle vector retrieval -> grounded Bedrock answer.
 No database objects or rows were created or changed.
 ```
 
-This is expected output, not a claim that your account has passed. A failure exits
+That output was observed in the verified run; new environments must rerun it. A failure exits
 nonzero. `--bedrock-only` explicitly reports that Oracle was not tested. The test
 prints document IDs, distances, and the answer; it does not print credentials or
 document embeddings. The fixed fact/citation check is a smoke assertion, not a

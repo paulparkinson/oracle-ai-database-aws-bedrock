@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.000
+This demonstration uses real Oracle and Bedrock
+services with three synthetic policies.
+
+00:00:06.000 --> 00:00:12.000
+Titan creates embeddings, Oracle retrieves
+evidence, and Nova generates a cited answer.
+
+00:00:12.000 --> 00:00:18.000
+The application is local; the database and model
+calls run in the cloud.
+
+00:00:18.000 --> 00:00:24.000
+The Python code invokes Titan Text Embeddings
+version two through the AWS SDK.
+
+00:00:24.000 --> 00:00:30.000
+It requests one thousand twenty-four dimensions
+and validates the returned vector.
+
+00:00:30.000 --> 00:00:36.000
+The same embedding model processes every
+document and each new question.
+
+00:00:36.000 --> 00:00:42.000
+This is the SQL actually executed by the live
+demonstration.
+
+00:00:42.000 --> 00:00:48.000
+Bound documents become vectors; Oracle orders
+them by exact cosine distance.
+
+00:00:48.000 --> 00:00:54.000
+A temporary CLOB holds the large payload. No
+persistent tables are changed.
+
+00:00:54.000 --> 00:01:00.000
+This capture shows the result returned by the
+live browser application.
+
+00:01:00.000 --> 00:01:06.000
+The transfer policy ranks first and supplies the
+thirty-seven-hour approval requirement.
+
+00:01:06.000 --> 00:01:12.000
+The evidence text and distance are visible, so
+you can inspect the citation.
+
+00:01:12.000 --> 00:01:18.000
+The sensor warranty question retrieves a
+different document as the top result.
+
+00:01:18.000 --> 00:01:24.000
+Its eighteen-month answer is supported by the
+displayed warranty policy.
+
+00:01:24.000 --> 00:01:30.000
+Each click calls the services again; these are
+not prewritten application answers.
+
+00:01:30.000 --> 00:01:36.000
+Project Aspen has no policy in this deliberately
+small document fixture.
+
+00:01:36.000 --> 00:01:42.000
+Inspect the live response instead of accepting a
+borrowed policy for another project.
+
+00:01:42.000 --> 00:01:48.000
+This example is a useful check, not a
+comprehensive hallucination evaluation.
+
+00:01:48.000 --> 00:01:54.000
+Configure private database settings, sign into
+AWS, and run the smoke test.
+
+00:01:54.000 --> 00:02:00.000
+Start the browser app and select one of the four
+bounded policy questions.
+
+00:02:00.000 --> 00:02:06.000
+Quick and EKS remain blocked by account
+permissions, not proven by this RAG demo.
+
