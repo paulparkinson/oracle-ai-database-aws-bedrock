@@ -63,8 +63,8 @@ for (i,s) in scenes.enumerated(){for (j,cue) in s.cues.enumerated(){
  try a.insertTimeRange(CMTimeRange(start:.zero,duration:asset.duration),of:asset.tracks(withMediaType:.audio)[0],at:CMTime(seconds:Double(start),preferredTimescale:600))
  let content=wrap(cue);srt+="\(i*3+j+1)\n\(stamp(start,",")) --> \(stamp(start+6,","))\n\(content)\n\n";vtt+="\(stamp(start,".")) --> \(stamp(start+6,"."))\n\(content)\n\n";narration+="\(start)s: \(cue)\n"
 }}
-try srt.write(to:root.appendingPathComponent("walkthrough.srt"),atomically:true,encoding:.utf8)
-try vtt.write(to:root.appendingPathComponent("walkthrough.vtt"),atomically:true,encoding:.utf8)
+try (srt.trimmingCharacters(in:.newlines)+"\n").write(to:root.appendingPathComponent("walkthrough.srt"),atomically:true,encoding:.utf8)
+try (vtt.trimmingCharacters(in:.newlines)+"\n").write(to:root.appendingPathComponent("walkthrough.vtt"),atomically:true,encoding:.utf8)
 try narration.write(to:root.appendingPathComponent("narration.txt"),atomically:true,encoding:.utf8)
 let exporter=AVAssetExportSession(asset:composition,presetName:AVAssetExportPresetHighestQuality)!
 exporter.outputURL=out;exporter.outputFileType = .mp4
