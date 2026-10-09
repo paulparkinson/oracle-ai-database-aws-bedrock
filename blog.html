@@ -71,7 +71,7 @@
 <tr><td>Document and question embeddings</td><td>Amazon Titan Text Embeddings V2 — <code>amazon.titan-embed-text-v2:0</code>, 1024 dimensions.</td></tr>
 <tr><td>Retrieval</td><td>Oracle <code>VECTOR_DISTANCE</code>, exact cosine search over three bound synthetic policies.</td></tr>
 <tr><td>RAG answer</td><td>Amazon Nova Lite — <code>amazon.nova-lite-v1:0</code>, Bedrock Converse API.</td></tr>
-<tr><td>NL2SQL</td><td>Not implemented in the runnable demo. The Select AI example below has no configured model and is not a verified deployment.</td></tr>
+<tr><td>NL2SQL</td><td>New application-managed implementation: Amazon Nova Lite — <code>amazon.nova-lite-v1:0</code>. Read-only Oracle tests pass; end-to-end model validation and NL2SQL video coverage are pending. This is distinct from the illustrative Select AI example below.</td></tr>
 </tbody></table></div></section>
 
 <h2>Choose Where the AI Workflow Runs</h2>
@@ -167,6 +167,9 @@ def answer(question, verified_tenant_id, pool):
 <p>The model call shapes follow <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-titan-embed-text.html">Titan embedding parameters</a> and the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse API</a>. Native vector binding requires a compatible Oracle database and driver. Start with exact retrieval to establish correctness, then benchmark an appropriate vector index and approximate query against that baseline.</p>
 <p>This is a teaching example, not a complete security boundary. Add database-enforced authorization beyond the tenant predicate, input and context-size limits, timeouts, retry budgets, and citation validation. Five nearest chunks may still be irrelevant: calibrate a relevance threshold and test questions with no answer. The instruction to ignore document commands helps model behavior but cannot replace authorization or tool restrictions.</p>
 
+<h2>Try the Bounded Application-Managed NL2SQL Demo</h2>
+<p>The <a href="rag/README.md#read-only-nl2sql">new demo</a> translates inventory-risk questions into a restricted SQL format using Nova Lite. Click <strong>Generate SQL</strong>, review the statement, then click <strong>Run reviewed SELECT</strong>. Oracle queries five explicitly synthetic inventory rows. No business inventory or permanent tables are modified.</p>
+<p>The server validates the complete SQL shape and binds its numeric threshold and row limit into a fixed Oracle query; it never executes raw model text. This is intentionally narrow application-managed NL2SQL, not a general SQL sandbox and not database-side Select AI. Oracle-only threshold tests and offline safety checks pass; live Bedrock generation still requires renewed AWS authentication. The video above remains the verified RAG walkthrough until that validation is complete.</p>
 <h2>Use Select AI for Natural-Language SQL</h2>
 <p>A second path places model integration inside Autonomous AI Database. Oracle's <a href="https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/select-ai-examples.html">Select AI AWS example</a> specifies an AWS credential, a network ACL for the Bedrock runtime endpoint, and an AI profile with <code>provider: aws</code> and an explicit supported model ID. Have an administrator configure prerequisites, then create a narrow application profile.</p>
 <pre><code class="language-sql">-- Prerequisites: AWS_CRED, package grants, endpoint ACL, and the view exist.

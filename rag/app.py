@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import rag_smoke_test as core
+from rag import nl2sql
 
 QUESTIONS = [core.QUESTION,
     "For Project Cedar, how long is the warranty for replacement sensors?",
@@ -79,14 +80,24 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         expected = f"http://127.0.0.1:{self.server.server_port}"
-        if not self.valid_host() or self.path != "/ask" or self.headers.get("Origin") != expected:
+        if not self.valid_host() or self.path not in ("/ask", "/nl2sql/generate", "/nl2sql/execute") or self.headers.get("Origin") != expected:
             return self.send(403, b"Invalid origin", "text/plain")
         try:
             size = int(self.headers.get("Content-Length", "0"))
             if not 0 < size <= 2048:
                 raise ValueError("Invalid request size")
-            result = ask(json.loads(self.rfile.read(size))["question"])
+            payload = json.loads(self.rfile.read(size))
+            if not isinstance(payload, dict):
+                raise ValueError("Expected a JSON object.")
+            if self.path == "/ask":
+                result = ask(payload["question"])
+            elif self.path == "/nl2sql/generate":
+                result = nl2sql.generate(payload["question"])
+            else:
+                result = nl2sql.execute(payload["receipt"])
             self.send(200, json.dumps(result).encode(), "application/json")
+        except ValueError as exc:
+            self.send(400, json.dumps({"error": str(exc)}).encode(), "application/json")
         except Exception as exc:
             # Never return raw AWS/Oracle errors that can contain internal identifiers.
             code = type(exc).__name__

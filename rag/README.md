@@ -1,4 +1,4 @@
-# Live Oracle + Bedrock RAG demo
+# Live Oracle + Bedrock RAG and read-only NL2SQL demo
 
 **Verified 2026-10-09:** real Titan V2 embeddings, Oracle cosine retrieval and Nova Lite generation pass end to end. The browser demo uses three explicitly synthetic policies, not business documents. No persistent database objects or rows are changed.
 
@@ -31,7 +31,7 @@ Open **http://127.0.0.1:8095**, choose a question, and click **Run live RAG**:
 
 Every click invokes live services (four embeddings plus one generation). Answers are not cached. Normal Bedrock charges apply. Wording can vary. The browser displays exact retrieved text and cosine distances before the model’s answer is interpreted. A citation alone is not proof of groundedness: compare it with the displayed evidence.
 
-The web app binds only loopback and accepts only four bounded questions. It validates Host and Origin; it exposes no arbitrary SQL, credentials or database identifiers. It is a workstation demo backed by cloud services, **not an AWS-hosted public application**. Do not change the bind address to publish it. Production needs a real application server, authentication, authorization, limits and a least-privilege database identity.
+The web app binds only loopback. RAG accepts four bounded policy questions; NL2SQL accepts up to 500 characters but only one restricted query grammar. It validates Host and Origin; it exposes no arbitrary SQL, credentials or database identifiers. It is a workstation demo backed by cloud services, **not an AWS-hosted public application**. Do not change the bind address to publish it. Production needs a real application server, authentication, authorization, limits and a least-privilege database identity.
 
 ## Architecture and verification
 
@@ -42,6 +42,32 @@ The web app binds only loopback and accepts only four bounded questions. It vali
 - Nova receives only the question and those chunks, with an instruction to abstain when unsupported. This small test is not a general hallucination or authorization evaluation.
 - The explicit CLOB locator fixes the observed `ORA-01460` with the large real-embedding payload; a short synthetic-vector test had not exposed it. Connection teardown releases temporary resources.
 - This implementation has no permanent ingestion table, vector index, Bedrock Knowledge Base, MCP endpoint or agent write action.
+
+## Read-only NL2SQL
+
+In the same app, choose **Read-only NL2SQL**:
+
+1. Enter `List the top 3 inventory items with stockout risk at least 70.`
+2. Click **Generate SQL**. Inspect Nova Lite's SQL and the Bedrock request ID. No Oracle query has run yet.
+3. Click **Run reviewed SELECT**. Oracle returns DEMO-100 (92), DEMO-200 (81), and DEMO-300 (74).
+4. Try `Show items with risk at least 85, limit 5.` → one row.
+5. Try `Show items with risk at least 95, limit 3.` → no rows.
+6. Try `Delete all inventory records.` → unsupported; no SQL executes.
+
+These are **five synthetic fixture rows**, not business inventory. Risk is a demo score from 0 to 100, not a probability. Oracle evaluates the fixture through bound JSON and `JSON_TABLE`; no persistent table is created.
+
+`Browser → Bedrock Nova Lite → validate SQL → review → fixed bound Oracle SELECT → rows`
+
+- NL2SQL uses **Amazon Nova Lite**, `amazon.nova-lite-v1:0`, through Bedrock Converse. It does **not** use embeddings.
+- This is **application-managed NL2SQL**, not Oracle Select AI: Python calls Bedrock; Oracle executes the read-only relational query.
+- [nl2sql.py](nl2sql.py) accepts exactly one complete SELECT grammar: fixed columns and fixture relation, a numeric minimum risk, descending risk/sku ordering, and a bounded row limit.
+- Raw model SQL is **never executed**. The validator extracts the two integers; the equivalent fixed Oracle query binds those values and the fixture. Expand “Fixed Oracle query and bound parameters” to inspect this distinction.
+- Server-side review receipts expire after ten minutes and are single-use. The execution route accepts a receipt, not client-supplied SQL. Changing the question invalidates the UI review.
+- Unknown schemas, functions, comments, joins, extra statements, writes and unsupported query shapes fail closed. There is no fallback answer or cached generated SQL.
+- The model sees the question and synthetic schema, not database rows. Results come from Oracle without another LLM summarization.
+- The fixed grammar is intentionally narrow, not a general SQL sandbox. Production must use a least-privilege account; the existing demo login is ADMIN, and this work does not change its grants.
+
+Verification so far: offline validation tests and live Oracle-only threshold tests pass. The end-to-end Bedrock generation check requires the renewed AWS sign-in; do not infer it from Oracle-only tests.
 
 ## Amazon Quick result
 

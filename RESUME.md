@@ -2,14 +2,15 @@
 
 Updated 2026-10-09 UTC. Work in progress; not a completion report.
 
-## Current video request
+## Current video request — NL2SQL approved
 
 - Root blog now embeds the expanded three-minute RAG walkthrough with exact model IDs, narration, SRT/VTT captions, application captures and source. Result captures are from the earlier successful live runs, not a newly authenticated run.
-- NL2SQL is not implemented in this repository: the root article contains a placeholder Select AI profile/model. Read-only inspection returned no profiles or profile attributes for the configured Oracle login. Do not claim a tested NL2SQL model.
-- Pending user choice: add a bounded application-managed Nova Lite NL2SQL demo, or keep this video RAG-only with Select AI clearly illustrative.
-- Previous temporary AWS CLI/profile files are gone. A new live RAG request failed before inference. AWS device sign-in redirects to Oracle corporate sign-in; browser safety review requires explicit approval for that destination. Do not bypass it.
+- Database-side Select AI remains illustrative; no profiles were found for the configured login. New application-managed NL2SQL is implemented but live Bedrock generation is not yet verified.
+- User approved application-managed Nova Lite NL2SQL and Oracle corporate sign-in. Implementation is now in rag/nl2sql.py and the combined app: generate SQL, inspect, then execute a single-use server receipt. Raw model SQL never reaches Oracle; fixed SQL binds extracted integers and a five-row synthetic fixture.
+- Corporate redirect is approved. Sign-in reached Paul's passkey and awaits user device verification; it cannot be completed without that interaction. A temporary standard AWS device-flow process may expire; restart it as necessary, never publish tokens.
 - Temporary preview servers and auth sessions are not durable; restart as needed. Only explicitly public blog/media routes may be exposed, never the repository root or private environment.
-- Expanded video verification passed: 180 seconds at 1920×1080, all 4,320 video frames and 506 audio samples decoded; ten scene previews inspected; media/embed audit and four offline tests passed. Browser playback advanced with English captions visible; the responsive embed fits a phone viewport.
+- New NL2SQL validation: 11 offline tests pass, including unsafe SQL and fabricated/expired receipt rejection. Live Oracle-only thresholds 70/85/95 return 3/1/0 rows. HTTP wrong-origin returns 403. No data/grants changed. Remaining: finish passkey sign-in, test actual Nova SQL generation, capture UI/results, extend the combined video, remove pending notices only after live success.
+- Expanded RAG-only video verification passed: 180 seconds at 1920×1080, all 4,320 video frames and 506 audio samples decoded; ten scene previews inspected; media/embed audit and four offline tests passed. Browser playback advanced with English captions visible; the responsive embed fits a phone viewport.
 
 - Goal: test Amazon Quick with the Oracle/Bedrock RAG demo; if unavailable, validate and publish the RAG demo, blog and narrated video. Commit/push tested changes.
 - User approved scoped cloud work. Never publish credentials, wallets, tokens or raw account logs.
