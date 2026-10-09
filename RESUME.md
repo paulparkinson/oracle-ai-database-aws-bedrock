@@ -2,6 +2,15 @@
 
 Updated 2026-10-09 UTC. Work in progress; not a completion report.
 
+## Current video request
+
+- Root blog now embeds the expanded three-minute RAG walkthrough with exact model IDs, narration, SRT/VTT captions, application captures and source. Result captures are from the earlier successful live runs, not a newly authenticated run.
+- NL2SQL is not implemented in this repository: the root article contains a placeholder Select AI profile/model. Read-only inspection returned no profiles or profile attributes for the configured Oracle login. Do not claim a tested NL2SQL model.
+- Pending user choice: add a bounded application-managed Nova Lite NL2SQL demo, or keep this video RAG-only with Select AI clearly illustrative.
+- Previous temporary AWS CLI/profile files are gone. A new live RAG request failed before inference. AWS device sign-in redirects to Oracle corporate sign-in; browser safety review requires explicit approval for that destination. Do not bypass it.
+- Temporary preview servers and auth sessions are not durable; restart as needed. Only explicitly public blog/media routes may be exposed, never the repository root or private environment.
+- Expanded video verification passed: 180 seconds at 1920×1080, all 4,320 video frames and 506 audio samples decoded; ten scene previews inspected; media/embed audit and four offline tests passed. Browser playback advanced with English captions visible; the responsive embed fits a phone viewport.
+
 - Goal: test Amazon Quick with the Oracle/Bedrock RAG demo; if unavailable, validate and publish the RAG demo, blog and narrated video. Commit/push tested changes.
 - User approved scoped cloud work. Never publish credentials, wallets, tokens or raw account logs.
 - AWS CLI SSO login succeeded with the existing Multicloud-Engineering-Bedrock role. AWS credentials remain in the CLI-managed private cache, outside Git.

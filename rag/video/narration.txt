@@ -1,21 +1,30 @@
 0s: This demonstration uses real Oracle and Bedrock services with three synthetic policies.
 6s: Titan creates embeddings, Oracle retrieves evidence, and Nova generates a cited answer.
 12s: The application is local; the database and model calls run in the cloud.
-18s: The Python code invokes Titan Text Embeddings version two through the AWS SDK.
-24s: It requests one thousand twenty-four dimensions and validates the returned vector.
-30s: The same embedding model processes every document and each new question.
-36s: This is the SQL actually executed by the live demonstration.
-42s: Bound documents become vectors; Oracle orders them by exact cosine distance.
-48s: A temporary CLOB holds the large payload. No persistent tables are changed.
-54s: This capture shows the result returned by the live browser application.
-60s: The transfer policy ranks first and supplies the thirty-seven-hour approval requirement.
-66s: The evidence text and distance are visible, so you can inspect the citation.
-72s: The sensor warranty question retrieves a different document as the top result.
-78s: Its eighteen-month answer is supported by the displayed warranty policy.
-84s: Each click calls the services again; these are not prewritten application answers.
-90s: Project Aspen has no policy in this deliberately small document fixture.
-96s: Inspect the live response instead of accepting a borrowed policy for another project.
-102s: This example is a useful check, not a comprehensive hallucination evaluation.
-108s: Configure private database settings, sign into AWS, and run the smoke test.
-114s: Start the browser app and select one of the four bounded policy questions.
-120s: Quick and EKS remain blocked by account permissions, not proven by this RAG demo.
+18s: Titan Text Embeddings V2 creates document and question vectors.
+24s: Amazon Nova Lite generates answers from the retrieved evidence.
+30s: No NL2SQL model is configured here. Select AI is illustrative.
+36s: Select a policy question in the browser application.
+42s: Click Run live RAG to call Bedrock and Oracle.
+48s: The choices cover transfers, warranties, recycling, and missing evidence.
+54s: The Python code invokes Titan Text Embeddings version two through the AWS SDK.
+60s: It requests one thousand twenty-four dimensions and validates the returned vector.
+66s: The same embedding model processes every document and each new question.
+72s: This is the SQL actually executed by the live demonstration.
+78s: Bound documents become vectors; Oracle orders them by exact cosine distance.
+84s: A temporary CLOB holds the large payload. No persistent tables are changed.
+90s: This Converse call uses the configured Nova Lite model.
+96s: The prompt contains the question and the chunks returned by Oracle.
+102s: The system instruction requests citations and rejects unsupported answers.
+108s: This capture shows the result returned by the live browser application.
+114s: The transfer policy ranks first and supplies the thirty-seven-hour approval requirement.
+120s: The evidence text and distance are visible, so you can inspect the citation.
+126s: The sensor warranty question retrieves a different document as the top result.
+132s: Its eighteen-month answer is supported by the displayed warranty policy.
+138s: Each click calls the services again; these are not prewritten application answers.
+144s: Project Aspen has no policy in this deliberately small document fixture.
+150s: Inspect the live response instead of accepting a borrowed policy for another project.
+156s: This example is a useful check, not a comprehensive hallucination evaluation.
+162s: Install requirements and configure private Oracle and AWS access.
+168s: Run the smoke test, start the app, and open its loopback URL.
+174s: Inspect the retrieved policy, citation, and answer for each question.

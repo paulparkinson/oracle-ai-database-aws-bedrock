@@ -19,11 +19,11 @@ func render(_ s:Scene)->CGImage {
  NSColor(calibratedRed:0.08,green:0.13,blue:0.15,alpha:1).setFill();NSRect(x:0,y:0,width:width,height:height).fill()
  text("ORACLE AI DATABASE × AMAZON BEDROCK",NSRect(x:70,y:38,width:1750,height:40),24,NSColor.systemOrange)
  text(s.title,NSRect(x:70,y:100,width:1750,height:90),48)
- if s.kind=="image" {
+ if s.kind=="image" || s.kind=="fullimage" {
   let image=NSImage(contentsOf:root.appendingPathComponent(s.file!))!
   // Frame the real captured answer/evidence card, removing redundant page header.
   var rect=NSRect(origin:.zero,size:image.size);let cg=image.cgImage(forProposedRect:&rect,context:nil,hints:nil)!
-  let crop=cg.cropping(to:CGRect(x:100,y:480,width:cg.width-200,height:cg.height-480))!
+  let crop=s.kind=="fullimage" ? cg : cg.cropping(to:CGRect(x:100,y:480,width:cg.width-200,height:cg.height-480))!
   let shown=NSImage(cgImage:crop,size:NSSize(width:crop.width,height:crop.height))
   let scale=min(1700/shown.size.width,760/shown.size.height)
   shown.draw(in:NSRect(x:CGFloat(width)/2-shown.size.width*scale/2,y:210,width:shown.size.width*scale,height:shown.size.height*scale),from:.zero,operation:.sourceOver,fraction:1,respectFlipped:true,hints:nil)

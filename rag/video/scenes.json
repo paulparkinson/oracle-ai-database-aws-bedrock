@@ -1,9 +1,108 @@
 [
- {"title":"Real services. Inspectable evidence.","kind":"text","body":"Oracle AI Database + Amazon Bedrock\n\nTitan V2 embeds three synthetic policies.\nOracle ranks evidence with cosine distance.\nNova Lite generates a cited answer.\n\nRead-only · No permanent ingestion · No cached answers","cues":["This demonstration uses real Oracle and Bedrock services with three synthetic policies.","Titan creates embeddings, Oracle retrieves evidence, and Nova generates a cited answer.","The application is local; the database and model calls run in the cloud."]},
- {"title":"Embeddings: the actual runtime call","kind":"code","file":"../../rag_smoke_test.py","marker":"def embed(","lines":19,"cues":["The Python code invokes Titan Text Embeddings version two through the AWS SDK.","It requests one thousand twenty-four dimensions and validates the returned vector.","The same embedding model processes every document and each new question."]},
- {"title":"Oracle performs the retrieval","kind":"code","file":"../../rag_smoke_test.py","marker":"RETRIEVAL_SQL =","lines":13,"cues":["This is the SQL actually executed by the live demonstration.","Bound documents become vectors; Oracle orders them by exact cosine distance.","A temporary CLOB holds the large payload. No persistent tables are changed."]},
- {"title":"Transfer policy: 37 hours","kind":"image","file":"transfer.jpg","cues":["This capture shows the result returned by the live browser application.","The transfer policy ranks first and supplies the thirty-seven-hour approval requirement.","The evidence text and distance are visible, so you can inspect the citation."]},
- {"title":"A different question changes the evidence","kind":"image","file":"warranty.jpg","cues":["The sensor warranty question retrieves a different document as the top result.","Its eighteen-month answer is supported by the displayed warranty policy.","Each click calls the services again; these are not prewritten application answers."]},
- {"title":"Insufficient evidence is a valid result","kind":"image","file":"unsupported.jpg","cues":["Project Aspen has no policy in this deliberately small document fixture.","Inspect the live response instead of accepting a borrowed policy for another project.","This example is a useful check, not a comprehensive hallucination evaluation."]},
- {"title":"Run it, and keep the boundaries clear","kind":"text","body":"1. Configure private Oracle TCPS + wallet settings.\n2. Sign into your authorized AWS SDK profile.\n3. Run: python rag_smoke_test.py\n4. Run: python rag/app.py\n5. Open the loopback URL printed by the app.\n\nQuick signup: denied by AWS.\nEKS provisioning: permissions unavailable.\nNeither is claimed as a successful deployment.","cues":["Configure private database settings, sign into AWS, and run the smoke test.","Start the browser app and select one of the four bounded policy questions.","Quick and EKS remain blocked by account permissions, not proven by this RAG demo."]}
+  {
+    "title": "Real services. Inspectable evidence.",
+    "kind": "text",
+    "body": "Oracle AI Database + Amazon Bedrock\n\nTitan V2 embeds three synthetic policies.\nOracle ranks evidence with cosine distance.\nNova Lite generates a cited answer.\n\nRead-only · No permanent ingestion · No cached answers",
+    "cues": [
+      "This demonstration uses real Oracle and Bedrock services with three synthetic policies.",
+      "Titan creates embeddings, Oracle retrieves evidence, and Nova generates a cited answer.",
+      "The application is local; the database and model calls run in the cloud."
+    ]
+  },
+  {
+    "title": "The models behind the demo",
+    "kind": "text",
+    "body": "VECTOR EMBEDDINGS\nAmazon Titan Text Embeddings V2\namazon.titan-embed-text-v2:0 · 1024 dimensions\n\nRAG ANSWER\nAmazon Nova Lite · amazon.nova-lite-v1:0\n\nNL2SQL: not implemented in the runnable demo.\nThe article's Select AI example is illustrative.",
+    "cues": [
+      "Titan Text Embeddings V2 creates document and question vectors.",
+      "Amazon Nova Lite generates answers from the retrieved evidence.",
+      "No NL2SQL model is configured here. Select AI is illustrative."
+    ]
+  },
+  {
+    "title": "Choose a question, then run RAG",
+    "kind": "fullimage",
+    "file": "ready.jpg",
+    "cues": [
+      "Select a policy question in the browser application.",
+      "Click Run live RAG to call Bedrock and Oracle.",
+      "The choices cover transfers, warranties, recycling, and missing evidence."
+    ]
+  },
+  {
+    "title": "Embeddings: the actual runtime call",
+    "kind": "code",
+    "file": "../../rag_smoke_test.py",
+    "marker": "def embed(",
+    "lines": 19,
+    "cues": [
+      "The Python code invokes Titan Text Embeddings version two through the AWS SDK.",
+      "It requests one thousand twenty-four dimensions and validates the returned vector.",
+      "The same embedding model processes every document and each new question."
+    ]
+  },
+  {
+    "title": "Oracle performs the retrieval",
+    "kind": "code",
+    "file": "../../rag_smoke_test.py",
+    "marker": "RETRIEVAL_SQL =",
+    "lines": 13,
+    "cues": [
+      "This is the SQL actually executed by the live demonstration.",
+      "Bound documents become vectors; Oracle orders them by exact cosine distance.",
+      "A temporary CLOB holds the large payload. No persistent tables are changed."
+    ]
+  },
+  {
+    "title": "Nova receives the retrieved evidence",
+    "kind": "code",
+    "file": "../../rag_smoke_test.py",
+    "marker": "def generate(",
+    "lines": 14,
+    "cues": [
+      "This Converse call uses the configured Nova Lite model.",
+      "The prompt contains the question and the chunks returned by Oracle.",
+      "The system instruction requests citations and rejects unsupported answers."
+    ]
+  },
+  {
+    "title": "Transfer policy: 37 hours",
+    "kind": "image",
+    "file": "transfer.jpg",
+    "cues": [
+      "This capture shows the result returned by the live browser application.",
+      "The transfer policy ranks first and supplies the thirty-seven-hour approval requirement.",
+      "The evidence text and distance are visible, so you can inspect the citation."
+    ]
+  },
+  {
+    "title": "A different question changes the evidence",
+    "kind": "image",
+    "file": "warranty.jpg",
+    "cues": [
+      "The sensor warranty question retrieves a different document as the top result.",
+      "Its eighteen-month answer is supported by the displayed warranty policy.",
+      "Each click calls the services again; these are not prewritten application answers."
+    ]
+  },
+  {
+    "title": "Insufficient evidence is a valid result",
+    "kind": "image",
+    "file": "unsupported.jpg",
+    "cues": [
+      "Project Aspen has no policy in this deliberately small document fixture.",
+      "Inspect the live response instead of accepting a borrowed policy for another project.",
+      "This example is a useful check, not a comprehensive hallucination evaluation."
+    ]
+  },
+  {
+    "title": "Run the complete RAG flow",
+    "kind": "text",
+    "body": "1. Install requirements.txt into a Python environment.\n2. Configure private Oracle TCPS EZConnect+ and wallet.\n3. Sign into your authorized AWS SDK profile.\n4. Run: python rag_smoke_test.py\n5. Run: python rag/app.py\n6. Open the loopback URL; select a question; run RAG.\n\nSynthetic policies, not business data. No persistent writes.\nSee rag/README.md for configuration and expected results.",
+    "cues": [
+      "Install requirements and configure private Oracle and AWS access.",
+      "Run the smoke test, start the app, and open its loopback URL.",
+      "Inspect the retrieved policy, citation, and answer for each question."
+    ]
+  }
 ]

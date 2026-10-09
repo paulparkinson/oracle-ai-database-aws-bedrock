@@ -1,5 +1,7 @@
 # Oracle + Bedrock RAG smoke test
 
+The [main blog](blog.html#walkthrough) embeds a three-minute narrated RAG application/source walkthrough with English captions and exact model IDs. [Download the video](rag/video/walkthrough.mp4). NL2SQL in the article is illustrative, not a running demo; no NL2SQL model has been verified.
+
 **Live end-to-end verification passed on October 9, 2026.** Start with the
 [interactive RAG demo and run instructions](rag/README.md) and
 [tested walkthrough](rag/blog.html). `rag/` contains the new focused demo;

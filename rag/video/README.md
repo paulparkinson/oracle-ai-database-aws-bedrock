@@ -1,6 +1,6 @@
 # Narrated RAG walkthrough
 
-`scenes.json` defines seven 18-second scenes (126 seconds total), exact visual sources and three six-second narration/caption cues per scene. Screenshots are captured from live successful browser requests; they are not generated application results. Code scenes read the current repository source. `narration.txt`, SRT and VTT are generated from the same cues.
+`scenes.json` defines ten 18-second scenes (180 seconds total), exact visual sources and three six-second narration/caption cues per scene. This is an edited screenshot-and-source walkthrough, not continuous screen recording. Result captures come from the earlier verified live requests; the start screen was refreshed for this revision. No results are generated or fabricated. NL2SQL remains illustrative, not demonstrated. Code scenes read the current repository source. `narration.txt`, SRT and VTT are generated from the same cues.
 
 On macOS, from this directory:
 

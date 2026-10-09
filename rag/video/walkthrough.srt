@@ -15,90 +15,134 @@ calls run in the cloud.
 
 4
 00:00:18,000 --> 00:00:24,000
-The Python code invokes Titan Text Embeddings
-version two through the AWS SDK.
+Titan Text Embeddings V2 creates document and
+question vectors.
 
 5
 00:00:24,000 --> 00:00:30,000
-It requests one thousand twenty-four dimensions
-and validates the returned vector.
+Amazon Nova Lite generates answers from the
+retrieved evidence.
 
 6
 00:00:30,000 --> 00:00:36,000
-The same embedding model processes every
-document and each new question.
+No NL2SQL model is configured here. Select AI is
+illustrative.
 
 7
 00:00:36,000 --> 00:00:42,000
-This is the SQL actually executed by the live
-demonstration.
+Select a policy question in the browser
+application.
 
 8
 00:00:42,000 --> 00:00:48,000
-Bound documents become vectors; Oracle orders
-them by exact cosine distance.
+Click Run live RAG to call Bedrock and Oracle.
 
 9
 00:00:48,000 --> 00:00:54,000
-A temporary CLOB holds the large payload. No
-persistent tables are changed.
+The choices cover transfers, warranties,
+recycling, and missing evidence.
 
 10
 00:00:54,000 --> 00:01:00,000
-This capture shows the result returned by the
-live browser application.
+The Python code invokes Titan Text Embeddings
+version two through the AWS SDK.
 
 11
 00:01:00,000 --> 00:01:06,000
-The transfer policy ranks first and supplies the
-thirty-seven-hour approval requirement.
+It requests one thousand twenty-four dimensions
+and validates the returned vector.
 
 12
 00:01:06,000 --> 00:01:12,000
-The evidence text and distance are visible, so
-you can inspect the citation.
+The same embedding model processes every
+document and each new question.
 
 13
 00:01:12,000 --> 00:01:18,000
-The sensor warranty question retrieves a
-different document as the top result.
+This is the SQL actually executed by the live
+demonstration.
 
 14
 00:01:18,000 --> 00:01:24,000
-Its eighteen-month answer is supported by the
-displayed warranty policy.
+Bound documents become vectors; Oracle orders
+them by exact cosine distance.
 
 15
 00:01:24,000 --> 00:01:30,000
-Each click calls the services again; these are
-not prewritten application answers.
+A temporary CLOB holds the large payload. No
+persistent tables are changed.
 
 16
 00:01:30,000 --> 00:01:36,000
-Project Aspen has no policy in this deliberately
-small document fixture.
+This Converse call uses the configured Nova Lite
+model.
 
 17
 00:01:36,000 --> 00:01:42,000
-Inspect the live response instead of accepting a
-borrowed policy for another project.
+The prompt contains the question and the chunks
+returned by Oracle.
 
 18
 00:01:42,000 --> 00:01:48,000
-This example is a useful check, not a
-comprehensive hallucination evaluation.
+The system instruction requests citations and
+rejects unsupported answers.
 
 19
 00:01:48,000 --> 00:01:54,000
-Configure private database settings, sign into
-AWS, and run the smoke test.
+This capture shows the result returned by the
+live browser application.
 
 20
 00:01:54,000 --> 00:02:00,000
-Start the browser app and select one of the four
-bounded policy questions.
+The transfer policy ranks first and supplies the
+thirty-seven-hour approval requirement.
 
 21
 00:02:00,000 --> 00:02:06,000
-Quick and EKS remain blocked by account
-permissions, not proven by this RAG demo.
+The evidence text and distance are visible, so
+you can inspect the citation.
+
+22
+00:02:06,000 --> 00:02:12,000
+The sensor warranty question retrieves a
+different document as the top result.
+
+23
+00:02:12,000 --> 00:02:18,000
+Its eighteen-month answer is supported by the
+displayed warranty policy.
+
+24
+00:02:18,000 --> 00:02:24,000
+Each click calls the services again; these are
+not prewritten application answers.
+
+25
+00:02:24,000 --> 00:02:30,000
+Project Aspen has no policy in this deliberately
+small document fixture.
+
+26
+00:02:30,000 --> 00:02:36,000
+Inspect the live response instead of accepting a
+borrowed policy for another project.
+
+27
+00:02:36,000 --> 00:02:42,000
+This example is a useful check, not a
+comprehensive hallucination evaluation.
+
+28
+00:02:42,000 --> 00:02:48,000
+Install requirements and configure private
+Oracle and AWS access.
+
+29
+00:02:48,000 --> 00:02:54,000
+Run the smoke test, start the app, and open its
+loopback URL.
+
+30
+00:02:54,000 --> 00:03:00,000
+Inspect the retrieved policy, citation, and
+answer for each question.
