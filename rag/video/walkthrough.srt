@@ -25,8 +25,8 @@ retrieved evidence.
 
 6
 00:00:30,000 --> 00:00:36,000
-No NL2SQL model is configured here. Select AI is
-illustrative.
+Nova Lite also generates bounded SQL. This is
+not database-side Select AI.
 
 7
 00:00:36,000 --> 00:00:42,000
@@ -134,15 +134,89 @@ comprehensive hallucination evaluation.
 
 28
 00:02:42,000 --> 00:02:48,000
-Install requirements and configure private
-Oracle and AWS access.
+Ask for the top three inventory items with risk
+at least seventy.
 
 29
 00:02:48,000 --> 00:02:54,000
-Run the smoke test, start the app, and open its
-loopback URL.
+Nova Lite returns SQL; review it before allowing
+execution.
 
 30
 00:02:54,000 --> 00:03:00,000
-Inspect the retrieved policy, citation, and
-answer for each question.
+The model identifier and Bedrock request ID are
+visible.
+
+31
+00:03:00,000 --> 00:03:06,000
+The server accepts only one complete SELECT
+grammar.
+
+32
+00:03:06,000 --> 00:03:12,000
+It extracts two integers and executes this fixed
+query with binds.
+
+33
+00:03:12,000 --> 00:03:18,000
+Raw model SQL never reaches Oracle. The
+transaction is read-only.
+
+34
+00:03:18,000 --> 00:03:24,000
+Click Run reviewed SELECT after inspecting the
+generated statement.
+
+35
+00:03:24,000 --> 00:03:30,000
+Oracle returns three synthetic items with scores
+ninety-two, eighty-one, and seventy-four.
+
+36
+00:03:30,000 --> 00:03:36,000
+Rows come directly from Oracle, without model
+summarization.
+
+37
+00:03:36,000 --> 00:03:42,000
+Change the minimum risk to eighty-five and
+generate again.
+
+38
+00:03:42,000 --> 00:03:48,000
+Review and run the new SQL. Only one fixture row
+qualifies.
+
+39
+00:03:48,000 --> 00:03:54,000
+The five-row fixture is synthetic, not business
+inventory.
+
+40
+00:03:54,000 --> 00:04:00,000
+With a minimum risk of ninety-five, Oracle
+returns no rows.
+
+41
+00:04:00,000 --> 00:04:06,000
+The model does not invent a matching product.
+
+42
+00:04:06,000 --> 00:04:12,000
+Unsupported write requests are rejected before
+database execution.
+
+43
+00:04:12,000 --> 00:04:18,000
+Install requirements and configure private
+Oracle and AWS access.
+
+44
+00:04:18,000 --> 00:04:24,000
+Run the smoke test, start the app, and open its
+loopback URL.
+
+45
+00:04:24,000 --> 00:04:30,000
+For SQL, generate, review, then run. Both flows
+use real cloud services.

@@ -67,7 +67,7 @@ These are **five synthetic fixture rows**, not business inventory. Risk is a dem
 - The model sees the question and synthetic schema, not database rows. Results come from Oracle without another LLM summarization.
 - The fixed grammar is intentionally narrow, not a general SQL sandbox. Production must use a least-privilege account; the existing demo login is ADMIN, and this work does not change its grants.
 
-Verification so far: offline validation tests and live Oracle-only threshold tests pass. The end-to-end Bedrock generation check requires the renewed AWS sign-in; do not infer it from Oracle-only tests.
+Verified 2026-10-09: live Nova Lite generation followed by Oracle execution returned 3/1/0 rows for thresholds 70/85/95. A delete request was rejected without execution. Browser review and result captures are included in the video. Twelve offline tests cover SQL boundaries, review receipts and RAG response/citation validation. RAG also passed fresh transfer, warranty and insufficient-evidence browser checks.
 
 ## Amazon Quick result
 

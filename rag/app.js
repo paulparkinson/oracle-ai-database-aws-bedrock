@@ -78,5 +78,5 @@ executeButton.addEventListener('click', async () => {
     document.querySelector('#nl-results').hidden = false;
     nlStatus.textContent = result.row_count + ' row(s) returned by Oracle. No persistent writes.';
   } catch (error) { nlStatus.textContent = error.message; }
-  finally { generateButton.disabled = false; }
+  finally { generateButton.disabled = false; document.querySelector('#nl-question').disabled = false; }
 });

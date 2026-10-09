@@ -2,7 +2,7 @@
   {
     "title": "Real services. Inspectable evidence.",
     "kind": "text",
-    "body": "Oracle AI Database + Amazon Bedrock\n\nTitan V2 embeds three synthetic policies.\nOracle ranks evidence with cosine distance.\nNova Lite generates a cited answer.\n\nRead-only · No permanent ingestion · No cached answers",
+    "body": "Oracle AI Database + Amazon Bedrock\n\nTitan V2 embeds three synthetic policies.\nOracle ranks evidence with cosine distance.\nNova Lite generates a cited answer.\n\nRead-only · No permanent ingestion · No cached answers\nNova Lite also generates bounded inventory SQL.",
     "cues": [
       "This demonstration uses real Oracle and Bedrock services with three synthetic policies.",
       "Titan creates embeddings, Oracle retrieves evidence, and Nova generates a cited answer.",
@@ -12,11 +12,11 @@
   {
     "title": "The models behind the demo",
     "kind": "text",
-    "body": "VECTOR EMBEDDINGS\nAmazon Titan Text Embeddings V2\namazon.titan-embed-text-v2:0 · 1024 dimensions\n\nRAG ANSWER\nAmazon Nova Lite · amazon.nova-lite-v1:0\n\nNL2SQL: not implemented in the runnable demo.\nThe article's Select AI example is illustrative.",
+    "body": "VECTOR EMBEDDINGS\nAmazon Titan Text Embeddings V2\namazon.titan-embed-text-v2:0 · 1024 dimensions\n\nRAG ANSWER\nAmazon Nova Lite · amazon.nova-lite-v1:0\n\nNL2SQL\nAmazon Nova Lite · amazon.nova-lite-v1:0\nApplication-managed; not database-side Select AI.",
     "cues": [
       "Titan Text Embeddings V2 creates document and question vectors.",
       "Amazon Nova Lite generates answers from the retrieved evidence.",
-      "No NL2SQL model is configured here. Select AI is illustrative."
+      "Nova Lite also generates bounded SQL. This is not database-side Select AI."
     ]
   },
   {
@@ -67,8 +67,8 @@
   },
   {
     "title": "Transfer policy: 37 hours",
-    "kind": "image",
-    "file": "transfer.jpg",
+    "kind": "fullimage",
+    "file": "rag-transfer-live.jpg",
     "cues": [
       "This capture shows the result returned by the live browser application.",
       "The transfer policy ranks first and supplies the thirty-seven-hour approval requirement.",
@@ -77,8 +77,8 @@
   },
   {
     "title": "A different question changes the evidence",
-    "kind": "image",
-    "file": "warranty.jpg",
+    "kind": "fullimage",
+    "file": "rag-warranty-live.jpg",
     "cues": [
       "The sensor warranty question retrieves a different document as the top result.",
       "Its eighteen-month answer is supported by the displayed warranty policy.",
@@ -87,8 +87,8 @@
   },
   {
     "title": "Insufficient evidence is a valid result",
-    "kind": "image",
-    "file": "unsupported.jpg",
+    "kind": "fullimage",
+    "file": "rag-unsupported-live.jpg",
     "cues": [
       "Project Aspen has no policy in this deliberately small document fixture.",
       "Inspect the live response instead of accepting a borrowed policy for another project.",
@@ -96,13 +96,65 @@
     ]
   },
   {
-    "title": "Run the complete RAG flow",
+    "title": "NL2SQL: generate, inspect, then run",
+    "kind": "fullimage",
+    "file": "nl-review.jpg",
+    "cues": [
+      "Ask for the top three inventory items with risk at least seventy.",
+      "Nova Lite returns SQL; review it before allowing execution.",
+      "The model identifier and Bedrock request ID are visible."
+    ]
+  },
+  {
+    "title": "Allowlisted shape; fixed SQL with binds",
+    "kind": "code",
+    "file": "../nl2sql.py",
+    "marker": "QUERY =",
+    "lines": 17,
+    "cues": [
+      "The server accepts only one complete SELECT grammar.",
+      "It extracts two integers and executes this fixed query with binds.",
+      "Raw model SQL never reaches Oracle. The transaction is read-only."
+    ]
+  },
+  {
+    "title": "Oracle returns three matching rows",
+    "kind": "fullimage",
+    "file": "nl-results.jpg",
+    "cues": [
+      "Click Run reviewed SELECT after inspecting the generated statement.",
+      "Oracle returns three synthetic items with scores ninety-two, eighty-one, and seventy-four.",
+      "Rows come directly from Oracle, without model summarization."
+    ]
+  },
+  {
+    "title": "Change the threshold, change the result",
+    "kind": "fullimage",
+    "file": "nl-one.jpg",
+    "cues": [
+      "Change the minimum risk to eighty-five and generate again.",
+      "Review and run the new SQL. Only one fixture row qualifies.",
+      "The five-row fixture is synthetic, not business inventory."
+    ]
+  },
+  {
+    "title": "No matches is not an error",
+    "kind": "fullimage",
+    "file": "nl-empty.jpg",
+    "cues": [
+      "With a minimum risk of ninety-five, Oracle returns no rows.",
+      "The model does not invent a matching product.",
+      "Unsupported write requests are rejected before database execution."
+    ]
+  },
+  {
+    "title": "Run both read-only demos",
     "kind": "text",
-    "body": "1. Install requirements.txt into a Python environment.\n2. Configure private Oracle TCPS EZConnect+ and wallet.\n3. Sign into your authorized AWS SDK profile.\n4. Run: python rag_smoke_test.py\n5. Run: python rag/app.py\n6. Open the loopback URL; select a question; run RAG.\n\nSynthetic policies, not business data. No persistent writes.\nSee rag/README.md for configuration and expected results.",
+    "body": "1. Install requirements.txt into a Python environment.\n2. Configure private Oracle TCPS EZConnect+ and wallet.\n3. Sign into your authorized AWS SDK profile.\n4. Run: python rag_smoke_test.py\n5. Run: python rag/app.py\n6. Open http://127.0.0.1:8095 and run RAG.\n7. Choose NL2SQL: generate, review, then run SELECT.\n\nSynthetic policies and inventory, not business data. No persistent writes.\nSee rag/README.md for configuration and expected results.",
     "cues": [
       "Install requirements and configure private Oracle and AWS access.",
       "Run the smoke test, start the app, and open its loopback URL.",
-      "Inspect the retrieved policy, citation, and answer for each question."
+      "For SQL, generate, review, then run. Both flows use real cloud services."
     ]
   }
 ]

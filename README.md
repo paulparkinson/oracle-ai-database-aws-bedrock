@@ -1,6 +1,6 @@
 # Oracle + Bedrock RAG smoke test
 
-The [main blog](blog.html#walkthrough) embeds a three-minute narrated RAG application/source walkthrough with English captions and exact model IDs. [Download the video](rag/video/walkthrough.mp4). A new [bounded, read-only NL2SQL implementation](rag/README.md#read-only-nl2sql) uses Nova Lite in application code. Oracle-only integration and offline safety tests pass; live Bedrock generation and the combined video are pending renewed AWS sign-in. The embedded video currently covers RAG only.
+The [main blog](blog.html#walkthrough) embeds a narrated RAG and read-only NL2SQL application/source walkthrough with English captions and exact model IDs. [Download the video](rag/video/walkthrough.mp4). Both flows were tested with live Bedrock and Oracle. [Run the demos](rag/README.md): Titan V2 embeds policies; Nova Lite generates cited RAG answers and bounded SQL. NL2SQL is application-managed, not database-side Select AI.
 
 **Live end-to-end verification passed on October 9, 2026.** Start with the
 [interactive RAG demo and run instructions](rag/README.md) and

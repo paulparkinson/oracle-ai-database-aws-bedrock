@@ -1,13 +1,25 @@
 import importlib.util
 from pathlib import Path
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, Mock
+import json
 
 spec = importlib.util.spec_from_file_location("rag_app", Path(__file__).resolve().parents[1] / "app.py")
 app = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(app)
 
 class DemoTests(unittest.TestCase):
+    def test_grounded_response_format(self):
+        runtime = Mock()
+        for payload in ({"id": "TRANSFER_POLICY"},
+                        {"answer": "Claim", "citations": ["INVENTED"]},
+                        {"answer": "", "citations": []}):
+            runtime.converse.return_value = {"output": {"message": {"content": [{"text": json.dumps(payload)}]}}}
+            with self.assertRaises(ValueError):
+                app.core.generate(runtime, "model", "question", app.core.DOCUMENTS)
+        runtime.converse.return_value = {"output": {"message": {"content": [{"text": json.dumps({"answer": "37 hours", "citations": ["TRANSFER_POLICY"]})}]}}}
+        self.assertEqual(app.core.generate(runtime, "model", "question", app.core.DOCUMENTS), "37 hours [TRANSFER_POLICY]")
+
     def test_bounded_question_rejected_before_services(self):
         with patch.object(app.core.boto3, "Session") as session:
             with self.assertRaises(ValueError):

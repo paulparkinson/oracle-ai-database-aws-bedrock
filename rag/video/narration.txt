@@ -3,7 +3,7 @@
 12s: The application is local; the database and model calls run in the cloud.
 18s: Titan Text Embeddings V2 creates document and question vectors.
 24s: Amazon Nova Lite generates answers from the retrieved evidence.
-30s: No NL2SQL model is configured here. Select AI is illustrative.
+30s: Nova Lite also generates bounded SQL. This is not database-side Select AI.
 36s: Select a policy question in the browser application.
 42s: Click Run live RAG to call Bedrock and Oracle.
 48s: The choices cover transfers, warranties, recycling, and missing evidence.
@@ -25,6 +25,21 @@
 144s: Project Aspen has no policy in this deliberately small document fixture.
 150s: Inspect the live response instead of accepting a borrowed policy for another project.
 156s: This example is a useful check, not a comprehensive hallucination evaluation.
-162s: Install requirements and configure private Oracle and AWS access.
-168s: Run the smoke test, start the app, and open its loopback URL.
-174s: Inspect the retrieved policy, citation, and answer for each question.
+162s: Ask for the top three inventory items with risk at least seventy.
+168s: Nova Lite returns SQL; review it before allowing execution.
+174s: The model identifier and Bedrock request ID are visible.
+180s: The server accepts only one complete SELECT grammar.
+186s: It extracts two integers and executes this fixed query with binds.
+192s: Raw model SQL never reaches Oracle. The transaction is read-only.
+198s: Click Run reviewed SELECT after inspecting the generated statement.
+204s: Oracle returns three synthetic items with scores ninety-two, eighty-one, and seventy-four.
+210s: Rows come directly from Oracle, without model summarization.
+216s: Change the minimum risk to eighty-five and generate again.
+222s: Review and run the new SQL. Only one fixture row qualifies.
+228s: The five-row fixture is synthetic, not business inventory.
+234s: With a minimum risk of ninety-five, Oracle returns no rows.
+240s: The model does not invent a matching product.
+246s: Unsupported write requests are rejected before database execution.
+252s: Install requirements and configure private Oracle and AWS access.
+258s: Run the smoke test, start the app, and open its loopback URL.
+264s: For SQL, generate, review, then run. Both flows use real cloud services.
