@@ -1,5 +1,14 @@
 # AWS demo checkpoint
 
+## AgentCore extension
+
+- Added agentcore_demo Runtime adapter, IAM-signed client and allowlisted ARM64 ZIP builder.
+- Local SDK HTTP test passed with live RAG (37 hours), live NL2SQL (3 rows), cross-session rejection and replay rejection; 6 adapter plus 12 existing tests pass.
+- ZIP builds; no private .env/wallet/credentials included (SDK public CA bundle is expected).
+- Cloud deployment NOT performed: ListAgentRuntimes denied; Create/Invoke Runtime, CreateRole/PassRole and Secrets Manager actions simulate implicitDeny.
+- Next: administrator supplies scoped permissions/execution role and a dedicated CREATE SESSION-only Oracle user's secret; approve and verify Runtime network access. Existing Oracle DNS is public from this workstation, not proof of Runtime reachability.
+- Do not upload the existing ADMIN credential/wallet or enable local-mode bypass in cloud. No VM, role, bucket, secret or Runtime created.
+
 Updated 2026-10-09. Combined RAG/NL2SQL video built and verified; inspect git/Pages status to confirm publication.
 
 - AWS SSO renewed successfully. Private SDK cache only; no credentials in commits.
